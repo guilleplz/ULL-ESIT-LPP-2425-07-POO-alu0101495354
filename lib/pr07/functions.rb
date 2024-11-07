@@ -1,4 +1,15 @@
 # Calcula el nivel de prioridad en función de la hora de entrada
+#
+# Este método evalúa la diferencia en minutos entre la hora actual y la hora de entrada,
+# y asigna un nivel de prioridad según la siguiente clasificación:
+# - Nivel I (Azul) - Reanimación, atención inmediata
+# - Nivel II (Rojo) - Emergencia, atención en 7 minutos
+# - Nivel III (Naranja) - Urgente, atención en 30 minutos
+# - Nivel IV (Verde) - Menos urgente, atención en 45 minutos
+# - Nivel V (Negro) - No urgente, atención en 60 minutos
+#
+# @param hora_entrada [Time] La hora de entrada de la persona al sistema de triaje
+# @return [String] El nivel de prioridad correspondiente según el tiempo transcurrido
 def nivel_prioridad(hora_entrada)
   # Obtener la hora actual
   hora_actual = Time.now
