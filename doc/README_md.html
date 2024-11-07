@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Pr07">Pr07</a>
+    <li><a href="#label-Clase+NivelTriaje">Clase NivelTriaje</a>
+    <li><a href="#label-Descripci-C3-B3n+General">Descripción General</a>
+    <li><a href="#label-Prop-C3-B3sito+de+la+Clase">Propósito de la Clase</a>
+    <li><a href="#label-Atributos">Atributos</a>
+    <li><a href="#label-40nivel"><code>@nivel</code></a>
+    <li><a href="#label-M-C3-A9todos">Métodos</a>
+    <li><a href="#label-initialize-28nivel-29"><code>initialize(nivel)</code></a>
+    <li><a href="#label-nivel_prioridad"><code>nivel_prioridad</code></a>
+    <li><a href="#label-Clase+Hora">Clase Hora</a>
+    <li><a href="#label-Descripci-C3-B3n">Descripción</a>
+    <li><a href="#label-Atributos">Atributos</a>
+    <li><a href="#label-M-C3-A9todos">Métodos</a>
+    <li><a href="#label-Validaci-C3-B3n+de+L-C3-ADmites">Validación de Límites</a>
+    <li><a href="#label-Clase+Fecha">Clase Fecha</a>
+    <li><a href="#label-Descripci-C3-B3n">Descripción</a>
+    <li><a href="#label-Atributos">Atributos</a>
+    <li><a href="#label-M-C3-A9todos">Métodos</a>
+    <li><a href="#label-Validaci-C3-B3n+de+L-C3-ADmites">Validación de Límites</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./bin/setup.html">setup</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-Pr07"><a href="Pr07.html"><code>Pr07</code></a><span><a href="#label-Pr07">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Clase+NivelTriaje">Clase <a href="NivelTriaje.html"><code>NivelTriaje</code></a><span><a href="#label-Clase+NivelTriaje">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Descripci-C3-B3n+General">Descripción General<span><a href="#label-Descripci-C3-B3n+General">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>NivelTriaje</code> representa un nivel dentro del Sistema Español de Triaje (SET). Este sistema se utiliza para priorizar la atención de pacientes según la gravedad y urgencia de su estado. La clase permite crear objetos que definen el nivel de prioridad en el triaje, basados en categorías predefinidas: Reanimación, Emergencia, Urgente, Menos urgente y No urgente.</p>
+
+<h3 id="label-Prop-C3-B3sito+de+la+Clase">Propósito de la Clase<span><a href="#label-Prop-C3-B3sito+de+la+Clase">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>El propósito principal de <code>NivelTriaje</code> es clasificar los niveles de atención según los colores y tiempos de respuesta asociados a cada prioridad en el SET. La clase es útil en sistemas que requieren gestionar flujos de pacientes, permitiendo asignar rápidamente el nivel de urgencia correspondiente a cada caso.</p>
+
+<h3 id="label-Atributos">Atributos<span><a href="#label-Atributos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-40nivel"><code>@nivel</code><span><a href="#label-40nivel">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p><strong>Tipo</strong>: Integer</p>
+</li><li>
+<p><strong>Descripción</strong>: Representa el nivel de triaje, que puede ser un valor entre 1 y 5. Cada valor corresponde a una categoría específica:</p>
+</li><li>
+<p><code>1</code>: Reanimación (Inmediato)</p>
+</li><li>
+<p><code>2</code>: Emergencia (7 minutos)</p>
+</li><li>
+<p><code>3</code>: Urgente (30 minutos)</p>
+</li><li>
+<p><code>4</code>: Menos urgente (45 minutos)</p>
+</li><li>
+<p><code>5</code>: No urgente (60 minutos)</p>
+</li></ul>
+
+<h3 id="label-M-C3-A9todos">Métodos<span><a href="#label-M-C3-A9todos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-initialize-28nivel-29"><code>initialize(nivel)</code><span><a href="#label-initialize-28nivel-29">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p><strong>Parámetro</strong>: <code>nivel</code> (Integer) - El nivel de triaje deseado al crear un nuevo objeto <code>NivelTriaje</code>.</p>
+</li><li>
+<p><strong>Descripción</strong>: Inicializa una nueva instancia de <code>NivelTriaje</code> con el nivel especificado. Asigna este valor al atributo <code>@nivel</code>.</p>
+</li></ul>
+
+<h4 id="label-nivel_prioridad"><code>nivel_prioridad</code><span><a href="#label-nivel_prioridad">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p><strong>Descripción</strong>: Retorna la categoría de prioridad en forma de cadena de texto, basándose en el nivel numérico de la instancia.</p>
+</li><li>
+<p><strong>Retorno</strong>: <code>String</code> - La categoría correspondiente al nivel de triaje.</p>
+</li><li>
+<p>Ejemplos de valores retornados: <code>&quot;Reanimación&quot;</code>, <code>&quot;Emergencia&quot;</code>, <code>&quot;Urgente&quot;</code>, <code>&quot;Menos urgente&quot;</code>, <code>&quot;No urgente&quot;</code>.</p>
+</li></ul>
+
+<h2 id="label-Clase+Hora">Clase <a href="Hora.html"><code>Hora</code></a><span><a href="#label-Clase+Hora">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Descripci-C3-B3n">Descripción<span><a href="#label-Descripci-C3-B3n">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>Hora</code> representa una hora con atributos de <strong>hora</strong>, <strong>minuto</strong> y <strong>segundo</strong>, asegurando que los valores sean válidos. Permite calcular la diferencia entre dos instancias de <code>Hora</code>.</p>
+
+<h3 id="label-Atributos">Atributos<span><a href="#label-Atributos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>@hora</code></strong>: <a href="Hora.html"><code>Hora</code></a> entre 0 y 23.</p>
+</li><li>
+<p><strong><code>@minuto</code></strong>: Minuto entre 0 y 59.</p>
+</li><li>
+<p><strong><code>@segundo</code></strong>: Segundo entre 0 y 59.</p>
+</li></ul>
+
+<h3 id="label-M-C3-A9todos">Métodos<span><a href="#label-M-C3-A9todos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>initialize(hora, minuto, segundo)</code></strong>: Constructor que valida los valores de hora, minuto y segundo.</p>
+</li><li>
+<p><strong><code>diferencia_en_tiempo(otra_hora)</code></strong>: Calcula la diferencia entre dos instancias de <code>Hora</code> y devuelve un hash con las diferencias en horas, minutos y segundos.</p>
+</li></ul>
+
+<h4 id="label-Validaci-C3-B3n+de+L-C3-ADmites">Validación de Límites<span><a href="#label-Validaci-C3-B3n+de+L-C3-ADmites">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>La hora debe estar entre 0 y 23.</p>
+</li><li>
+<p>Los minutos y segundos deben estar entre 0 y 59.</p>
+</li><li>
+<p>Si algún valor es inválido, se lanza un <code>ArgumentError</code>.</p>
+</li></ul>
+
+<h2 id="label-Clase+Fecha">Clase <a href="Fecha.html"><code>Fecha</code></a><span><a href="#label-Clase+Fecha">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Descripci-C3-B3n">Descripción<span><a href="#label-Descripci-C3-B3n">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>Fecha</code> representa una fecha con los atributos <strong>año</strong>, <strong>mes</strong> y <strong>día</strong>. Asegura que los valores sean válidos y permite calcular la diferencia entre dos fechas.</p>
+
+<h3 id="label-Atributos">Atributos<span><a href="#label-Atributos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>@año</code></strong>: Año de la fecha, debe ser un número entero positivo.</p>
+</li><li>
+<p><strong><code>@mes</code></strong>: Mes de la fecha, debe estar entre 1 y 12.</p>
+</li><li>
+<p><strong><code>@dia</code></strong>: Día de la fecha, debe estar entre 1 y 31.</p>
+</li></ul>
+
+<h3 id="label-M-C3-A9todos">Métodos<span><a href="#label-M-C3-A9todos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>initialize(año, mes, dia)</code></strong>: Constructor que valida los valores de año, mes y día.</p>
+</li><li>
+<p><strong><code>diferencia_en_fechas(otra_fecha)</code></strong>: Calcula la diferencia entre dos instancias de <code>Fecha</code> y devuelve un hash con la diferencia en años, meses y días.</p>
+</li></ul>
+
+<h4 id="label-Validaci-C3-B3n+de+L-C3-ADmites">Validación de Límites<span><a href="#label-Validaci-C3-B3n+de+L-C3-ADmites">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>El año debe ser mayor o igual a 0.</p>
+</li><li>
+<p>El mes debe estar entre 1 y 12.</p>
+</li><li>
+<p>El día debe estar entre 1 y 31.</p>
+</li><li>
+<p>Si algún valor es inválido, se lanza un <code>ArgumentError</code>.</p>
+</li></ul>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

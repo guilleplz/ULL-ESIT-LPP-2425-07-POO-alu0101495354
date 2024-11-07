@@ -1,0 +1,20 @@
+Thu, 07 Nov 2024 15:57:37 +0000
+./Gemfile.lock	Thu, 07 Nov 2024 15:57:28 +0000
+./lib/pr07.rb	Thu, 07 Nov 2024 15:40:10 +0000
+./lib/pr07/nivel_triaje.rb	Thu, 07 Nov 2024 15:56:21 +0000
+./lib/pr07/hora.rb	Thu, 07 Nov 2024 15:55:55 +0000
+./lib/pr07/version.rb	Thu, 07 Nov 2024 13:14:35 +0000
+./lib/pr07/constants.rb	Thu, 07 Nov 2024 15:45:00 +0000
+./lib/pr07/fecha.rb	Thu, 07 Nov 2024 15:54:57 +0000
+./lib/pr07/functions.rb	Thu, 07 Nov 2024 15:55:29 +0000
+./Gemfile	Thu, 07 Nov 2024 15:57:22 +0000
+./Rakefile	Thu, 07 Nov 2024 13:14:35 +0000
+./README.md	Thu, 07 Nov 2024 15:49:55 +0000
+./bin/console	Thu, 07 Nov 2024 13:14:35 +0000
+./bin/setup	Thu, 07 Nov 2024 13:14:35 +0000
+./test/nivel_triaje_test.rb	Thu, 07 Nov 2024 15:33:59 +0000
+./test/hora_test.rb	Thu, 07 Nov 2024 15:33:59 +0000
+./test/test_helper.rb	Thu, 07 Nov 2024 15:33:59 +0000
+./test/fecha_test.rb	Thu, 07 Nov 2024 15:33:59 +0000
+./test/functions_test.rb	Thu, 07 Nov 2024 15:42:58 +0000
+./LICENSE.txt	Thu, 07 Nov 2024 13:14:35 +0000
