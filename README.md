@@ -1,40 +1,37 @@
 # Pr07
+ 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pr07`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Clase NivelTriaje
 
-TODO: Delete this and the text above, and describe your gem
+### Descripción General
 
-## Installation
+La clase `NivelTriaje` representa un nivel dentro del Sistema Español de Triaje (SET). Este sistema se utiliza para priorizar la atención de pacientes según la gravedad y urgencia de su estado. La clase permite crear objetos que definen el nivel de prioridad en el triaje, basados en categorías predefinidas: Reanimación, Emergencia, Urgente, Menos urgente y No urgente.
 
-Add this line to your application's Gemfile:
+### Propósito de la Clase
 
-```ruby
-gem 'pr07'
-```
+El propósito principal de `NivelTriaje` es clasificar los niveles de atención según los colores y tiempos de respuesta asociados a cada prioridad en el SET. La clase es útil en sistemas que requieren gestionar flujos de pacientes, permitiendo asignar rápidamente el nivel de urgencia correspondiente a cada caso.
 
-And then execute:
+### Atributos
 
-    $ bundle install
+#### `@nivel`
 
-Or install it yourself as:
+- **Tipo**: Integer
+- **Descripción**: Representa el nivel de triaje, que puede ser un valor entre 1 y 5. Cada valor corresponde a una categoría específica:
+  - `1`: Reanimación (Inmediato)
+  - `2`: Emergencia (7 minutos)
+  - `3`: Urgente (30 minutos)
+  - `4`: Menos urgente (45 minutos)
+  - `5`: No urgente (60 minutos)
 
-    $ gem install pr07
+### Métodos
 
-## Usage
+#### `initialize(nivel)`
 
-TODO: Write usage instructions here
+- **Parámetro**: `nivel` (Integer) - El nivel de triaje deseado al crear un nuevo objeto `NivelTriaje`.
+- **Descripción**: Inicializa una nueva instancia de `NivelTriaje` con el nivel especificado. Asigna este valor al atributo `@nivel`.
 
-## Development
+#### `nivel_prioridad`
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pr07.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+- **Descripción**: Retorna la categoría de prioridad en forma de cadena de texto, basándose en el nivel numérico de la instancia.
+- **Retorno**: `String` - La categoría correspondiente al nivel de triaje.
+  - Ejemplos de valores retornados: `"Reanimación"`, `"Emergencia"`, `"Urgente"`, `"Menos urgente"`, `"No urgente"`.
