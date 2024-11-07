@@ -23,4 +23,26 @@ class Fecha
     @mes = mes
     @dia = dia
   end
+
+  def diferencia_en_fecha(otra_fecha)
+    dia_diff = otra_fecha.dia - @dia
+    mes_diff = otra_fecha.mes - @mes
+    anio_diff = otra_fecha.anio - @anio
+
+    if dia_diff < 0
+      dia_diff += 30
+      mes_diff -= 1
+    end
+
+    if mes_diff < 0
+      mes_diff += 12
+      anio_diff -= 1
+    end
+
+    {
+      anos: anio_diff,
+      meses: mes_diff,
+      dias: dia_diff
+    }
+  end
 end
