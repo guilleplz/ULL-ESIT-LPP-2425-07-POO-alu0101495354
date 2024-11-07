@@ -16,4 +16,27 @@ class Hora
     @segundo = segundo
   end
 
+  def diferencia_en_tiempo(otra_hora)
+    hora_diff = otra_hora.hora - @hora
+    minuto_diff = otra_hora.minuto - @minuto
+    segundo_diff = otra_hora.segundo - @segundo
+
+    if segundo_diff < 0
+      segundo_diff += 60
+      minuto_diff -= 1
+    end
+
+    if minuto_diff < 0
+      minuto_diff += 60
+      hora_diff -= 1
+    end
+
+    {
+      horas: hora_diff,
+      minutos: minuto_diff,
+      segundos: segundo_diff
+    }
+  end
+
+
 end
