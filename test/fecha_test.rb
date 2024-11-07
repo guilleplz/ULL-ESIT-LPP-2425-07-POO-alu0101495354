@@ -3,6 +3,10 @@ require 'test_helper'
 class TestFecha < Test::Unit::TestCase
   def setup
     @fecha1 = Fecha.new(2024, 2, 28)
+    @fecha2 = Fecha.new(2024, 10, 10)
+    @fecha3 = Fecha.new(2024, 11, 7)
+    @fecha4 = Fecha.new(2023, 12, 31)
+    @fecha5 = Fecha.new(2024, 1, 2)
   end
 
   def test_initializer
@@ -25,6 +29,13 @@ class TestFecha < Test::Unit::TestCase
     assert_raises(ArgumentError) { Fecha.new(2024, 4, 31) }  # Abril solo tiene 30 días
   end
 
-  
+  def test_diferencia_en_fechas
+
+    diferencia = @fecha2.diferencia_en_fecha(@fecha3)
+    assert_equal({ anios: 0, meses: 0, dias: 27 }, diferencia)
+
+    diferencia2 = @fecha4.diferencia_en_fecha(@fecha5)
+    assert_equal({ anios: 0, meses: 0, dias: 1 }, diferencia2)
+  end
 
 end
