@@ -1,6 +1,5 @@
 # Pr07
  
-
 ## Clase NivelTriaje
 
 ### Descripción General
