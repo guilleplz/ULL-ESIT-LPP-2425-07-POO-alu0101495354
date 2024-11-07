@@ -61,3 +61,26 @@ La clase `Hora` representa una hora con atributos de **hora**, **minuto** y **se
 - Los minutos y segundos deben estar entre 0 y 59.
 - Si algún valor es inválido, se lanza un `ArgumentError`.
 
+## Clase Fecha
+
+### Descripción
+
+La clase `Fecha` representa una fecha con los atributos **año**, **mes** y **día**. Asegura que los valores sean válidos y permite calcular la diferencia entre dos fechas.
+
+### Atributos
+
+- **`@año`**: Año de la fecha, debe ser un número entero positivo.
+- **`@mes`**: Mes de la fecha, debe estar entre 1 y 12.
+- **`@dia`**: Día de la fecha, debe estar entre 1 y 31.
+
+### Métodos
+
+- **`initialize(año, mes, dia)`**: Constructor que valida los valores de año, mes y día.
+- **`diferencia_en_fechas(otra_fecha)`**: Calcula la diferencia entre dos instancias de `Fecha` y devuelve un hash con la diferencia en años, meses y días.
+
+#### Validación de Límites
+
+- El año debe ser mayor o igual a 0.
+- El mes debe estar entre 1 y 12.
+- El día debe estar entre 1 y 31.
+- Si algún valor es inválido, se lanza un `ArgumentError`.
