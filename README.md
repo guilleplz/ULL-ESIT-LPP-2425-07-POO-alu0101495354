@@ -35,3 +35,29 @@ El propósito principal de `NivelTriaje` es clasificar los niveles de atención 
 - **Descripción**: Retorna la categoría de prioridad en forma de cadena de texto, basándose en el nivel numérico de la instancia.
 - **Retorno**: `String` - La categoría correspondiente al nivel de triaje.
   - Ejemplos de valores retornados: `"Reanimación"`, `"Emergencia"`, `"Urgente"`, `"Menos urgente"`, `"No urgente"`.
+
+
+## Clase Hora
+
+
+### Descripción
+
+La clase `Hora` representa una hora con atributos de **hora**, **minuto** y **segundo**, asegurando que los valores sean válidos. Permite calcular la diferencia entre dos instancias de `Hora`.
+
+### Atributos
+
+- **`@hora`**: Hora entre 0 y 23.
+- **`@minuto`**: Minuto entre 0 y 59.
+- **`@segundo`**: Segundo entre 0 y 59.
+
+### Métodos
+
+- **`initialize(hora, minuto, segundo)`**: Constructor que valida los valores de hora, minuto y segundo.
+- **`diferencia_en_tiempo(otra_hora)`**: Calcula la diferencia entre dos instancias de `Hora` y devuelve un hash con las diferencias en horas, minutos y segundos.
+
+#### Validación de Límites
+
+- La hora debe estar entre 0 y 23.
+- Los minutos y segundos deben estar entre 0 y 59.
+- Si algún valor es inválido, se lanza un `ArgumentError`.
+
