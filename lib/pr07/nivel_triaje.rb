@@ -1,3 +1,5 @@
+require_relative './constants'
+
 # Clase NivelTriaje representa un nivel en el sistema de triaje
 # del Sistema Español de Triaje (SET).
 class NivelTriaje
@@ -17,12 +19,12 @@ class NivelTriaje
   # @return [String] La categoría del nivel, como "Reanimación" o "Emergencia".
   def nivel_prioridad
     case @nivel
-    when 1 then "Reanimación"
-    when 2 then "Emergencia"
-    when 3 then "Urgente"
-    when 4 then "Menos urgente"
-    when 5 then "No urgente"
-    else "Desconocido"
+    when 1 then REANIMACION
+    when 2 then EMERGENCIA
+    when 3 then URGENTE
+    when 4 then MENOS_URGENTE
+    when 5 then NO_URGENTE
+    else DESCONOCIDO
     end
   end
 end

@@ -1,0 +1,6 @@
+REANIMACION = "Reanimacion"
+EMERGENCIA = "Emergencia"
+URGENTE = "Urgente"
+MENOS_URGENTE = "Menos urgente"
+NO_URGENTE = "No urgente"
+DESCONOCIDO = "Desconocido"
