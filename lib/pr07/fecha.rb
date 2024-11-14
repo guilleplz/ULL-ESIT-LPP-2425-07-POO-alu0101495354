@@ -70,4 +70,13 @@ class Fecha
       dias: dia_diff
     }
   end
+
+
+  def diferencia_anios(otra_fecha)
+    years = @anio - otra_fecha.anio
+    years -= 1 if @mes < otra_fecha.mes || (@mes == otra_fecha.mes && @dia < otra_fecha.dia)
+    years
+  end
+
+
 end

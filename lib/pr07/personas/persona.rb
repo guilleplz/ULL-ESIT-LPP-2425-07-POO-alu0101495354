@@ -1,7 +1,9 @@
+require_relative '../fecha'
+
 class Persona
   attr_reader :id, :sexo
 
-  @@personas_instanciadas = 0
+  @@personas_instanciadas = -1
 
   def initialize(id, nombre, apellido, sexo, fecha_nacimiento)
     @id = id
