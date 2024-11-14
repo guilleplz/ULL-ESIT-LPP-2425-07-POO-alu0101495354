@@ -154,3 +154,37 @@ La clase `Medico` hereda de la clase `Persona`, lo que significa que tiene todos
 
 ### Métodos adicionales
 - **`edad`**: Calcula la edad del médico en años utilizando la clase `Fecha`.
+
+
+## Clase `Titular`
+
+La clase `Titular` representa a un médico titular, un tipo especializado de `Medico`, con la particularidad de que no puede manejar más de un número máximo de pacientes asignados, que puede variar según el médico. 
+
+### Propiedades
+
+- **`@max_pacientes`**: Atributo entero que almacena el número máximo de pacientes que un médico titular puede atender simultáneamente.
+- **`@pacientes`**: Atributo que almacena una lista de pacientes asignados al médico titular. Esta lista se llena con instancias de la clase `Paciente`.
+
+### Métodos
+
+#### `initialize(id, nombre, apellido, sexo, fecha_nacimiento, especialidad, max_pacientes)`
+Este es el constructor de la clase. Inicializa un médico titular con los siguientes parámetros:
+- `id`: Identificador único de la persona.
+- `nombre`: Nombre del médico.
+- `apellido`: Apellido del médico.
+- `sexo`: Sexo del médico.
+- `fecha_nacimiento`: Fecha de nacimiento del médico.
+- `especialidad`: Especialidad médica del médico titular.
+- `max_pacientes`: Número máximo de pacientes que el médico puede atender simultáneamente.
+
+#### `max_pacientes`
+Método getter que devuelve el número máximo de pacientes que el médico titular puede atender.
+
+#### `numero_pacientes`
+Método getter que devuelve el número de pacientes actualmente asignados al médico titular.
+
+#### `ha_alcanzado_carga_maxima?`
+Método que devuelve un valor booleano indicando si el médico titular ha alcanzado el número máximo de pacientes asignados. Devuelve `true` si ha alcanzado el límite, de lo contrario `false`.
+
+#### `to_s`
+Método que devuelve una representación en cadena de caracteres del objeto, que incluye el nombre completo del médico y su especialidad.
