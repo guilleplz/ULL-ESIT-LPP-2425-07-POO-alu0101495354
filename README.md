@@ -133,3 +133,24 @@ La clase `Paciente` hereda de la clase `Persona`, lo que significa que tiene tod
 
 ### Métodos adicionales
 - **`edad`**: Calcula la edad del paciente en años utilizando la clase `Fecha`.
+
+## Clase Medico
+
+### Descripción
+La clase `Medico` representa a un médico dentro del sistema sanitario. Hereda de la clase `Persona` y encapsula las propiedades específicas de un médico, como su especialidad y el conjunto de pacientes asignados.
+
+### Atributos
+- **Especialidad**: Una cadena que representa la especialidad del médico. Las especialidades posibles son: `general`, `geriatría`, `pediatría`.
+- **Pacientes asignados**: Un conjunto de pacientes asignados al médico.
+
+### Métodos
+- **`especialidad`**: Accede a la especialidad del médico.
+- **`pacientes`**: Accede a la lista de pacientes asignados al médico.
+- **`numero_pacientes`**: Devuelve el número de pacientes asignados al médico.
+- **`to_s`**: Método de conversión a cadena que representa al médico con su nombre completo, especialidad y número de pacientes asignados.
+  
+### Herencia
+La clase `Medico` hereda de la clase `Persona`, lo que significa que tiene todos los atributos y métodos de la clase `Persona`, como el nombre completo, sexo y edad.
+
+### Métodos adicionales
+- **`edad`**: Calcula la edad del médico en años utilizando la clase `Fecha`.
