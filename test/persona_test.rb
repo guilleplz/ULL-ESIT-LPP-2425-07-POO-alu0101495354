@@ -48,6 +48,31 @@ class TestPersonas < Test::Unit::TestCase
     assert(@titular.carga_maxima?)
   end
 
+  def test_igualdad_entre_objetos
+    persona_igual = Persona.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10))
+    assert(@persona == persona_igual)
+  end
+
+  def test_igualdad_entre_persona_y_paciente
+    persona = Persona.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10))
+    paciente = Paciente.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10), EMERGENCIA)
+
+    assert(persona == paciente)  # Ahora debería pasar
+  end
+
+  def test_igualdad_entre_persona_y_medico
+    persona = Persona.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10))
+    medico = Medico.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10), "General")
+
+    assert(persona == medico)  # Ahora debería pasar
+  end
+
+  def test_igualdad_entre_persona_y_titular
+    persona = Persona.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10))
+    titular = Titular.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10), "General", 2)
+
+    assert(persona == titular)  # Ahora debería pasar
+  end
 
 
 end
