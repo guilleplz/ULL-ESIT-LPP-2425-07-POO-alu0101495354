@@ -1,9 +1,8 @@
-require_relative '../fecha'
+require_relative './functions.rb'
 
 class Persona
   attr_reader :id, :sexo
 
-  @@personas_instanciadas = -1
 
   def initialize(id, nombre, apellido, sexo, fecha_nacimiento)
     @id = id
@@ -11,13 +10,12 @@ class Persona
     @fecha_nacimiento = fecha_nacimiento
     @nombre = nombre
     @apellido = apellido
-    @@personas_instanciadas += 1
+    if self.class == Persona  # Solo incrementa el contador si la clase es exactamente Persona
+      incrementar_contador
+    end
   end
 
-  def self.numero_personas
-    @@personas_instanciadas
-  end
-
+  # Método público para obtener el nombre completo
   def nombre_completo
     "#{@nombre} #{@apellido}"
   end
