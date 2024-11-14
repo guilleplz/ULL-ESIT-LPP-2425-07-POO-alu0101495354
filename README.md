@@ -111,3 +111,25 @@ La clase `Persona` representa a una persona con atributos básicos y encapsula p
 
 - `@fecha_nacimiento`: Atributo protegido, accesible solo dentro de la clase y sus subclases.
 - `@nombre` y `@apellido`: Atributos privados, solo accesibles dentro de la clase `Persona`.
+
+
+## Clase Paciente
+
+### Descripción
+La clase `Paciente` representa a un paciente dentro del sistema sanitario. Hereda de la clase `Persona` y encapsula las propiedades específicas de un paciente, como su prioridad en el triaje y su conjunto de diagnósticos.
+
+### Atributos
+- **Prioridad (nivel de triaje)**: Un valor que indica el nivel de urgencia del paciente según el sistema de triaje (Azul, Rojo, Naranja, Verde, Negro).
+- **Diagnósticos**: Un conjunto de diagnósticos médicos que el paciente ha recibido. Pueden ser: `alta`, `leve`, `grave`, `muy grave`.
+
+### Métodos
+- **`prioridad`**: Accede al nivel de prioridad del paciente.
+- **`diagnosticos`**: Accede a la lista de diagnósticos del paciente.
+- **`ultimo_diagnostico`**: Devuelve el último diagnóstico asignado al paciente.
+- **`to_s`**: Método de conversión a cadena que representa al paciente con su nombre completo y su prioridad.
+  
+### Herencia
+La clase `Paciente` hereda de la clase `Persona`, lo que significa que tiene todos los atributos y métodos de la clase `Persona`, incluyendo los métodos de acceso a nombre completo, sexo, y edad.
+
+### Métodos adicionales
+- **`edad`**: Calcula la edad del paciente en años utilizando la clase `Fecha`.
