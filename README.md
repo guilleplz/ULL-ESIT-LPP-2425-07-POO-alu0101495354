@@ -84,3 +84,30 @@ La clase `Fecha` representa una fecha con los atributos **año**, **mes** y **d�
 - El mes debe estar entre 1 y 12.
 - El día debe estar entre 1 y 31.
 - Si algún valor es inválido, se lanza un `ArgumentError`.
+
+
+## Clase Persona
+
+### Descripción General
+
+La clase `Persona` representa a una persona con atributos básicos y encapsula propiedades comunes a distintas entidades (como médicos o pacientes). Incluye métodos para acceder a sus datos de manera controlada y para calcular la edad de la persona basada en su fecha de nacimiento.
+
+### Atributos
+
+- `@id` (público): Identificación única de la persona.
+- `@sexo` (público): Género de la persona.
+- `@fecha_nacimiento` (protegido): Fecha de nacimiento, utilizada para calcular la edad.
+- `@nombre` y `@apellido` (privados): Nombre y apellido de la persona, accesibles únicamente a través del método `nombre_completo`.
+
+### Métodos
+
+- `initialize(id, nombre, apellido, sexo, fecha_nacimiento)`: Constructor que inicializa los atributos de la persona. Al crear una instancia, aumenta el contador de personas instanciadas.
+- `self.numero_personas`: Método de clase que devuelve el número de personas instanciadas.
+- `nombre_completo`: Método que retorna el nombre completo de la persona como una cadena de texto.
+- `edad`: Calcula y retorna la edad de la persona en años, utilizando el método `diferencia_anios` de la clase `Fecha`.
+- `to_s`: Convierte la información de la persona en una cadena de texto, incluyendo nombre completo, sexo y edad.
+
+### Visibilidad de Atributos
+
+- `@fecha_nacimiento`: Atributo protegido, accesible solo dentro de la clase y sus subclases.
+- `@nombre` y `@apellido`: Atributos privados, solo accesibles dentro de la clase `Persona`.
