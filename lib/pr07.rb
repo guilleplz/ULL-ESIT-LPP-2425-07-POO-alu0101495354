@@ -7,6 +7,7 @@ require_relative "pr07/functions"
 require_relative "pr07/personas/persona"
 require_relative "pr07/personas/paciente"
 require_relative "pr07/personas/functions"
+require_relative "pr07/personas/medico"
 
 module Pr07
   class Error < StandardError; end

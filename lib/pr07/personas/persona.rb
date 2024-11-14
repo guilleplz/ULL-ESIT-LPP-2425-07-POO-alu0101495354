@@ -10,9 +10,7 @@ class Persona
     @fecha_nacimiento = fecha_nacimiento
     @nombre = nombre
     @apellido = apellido
-    if self.class == Persona  # Solo incrementa el contador si la clase es exactamente Persona
-      incrementar_contador
-    end
+    incrementar_contador
   end
 
   # Método público para obtener el nombre completo
