@@ -75,7 +75,11 @@
 
   <ul class="link-list" role="directory">
     
+    <li ><a href="#method-i-incrementar_contador">#incrementar_contador</a>
+    
     <li ><a href="#method-i-nivel_prioridad">#nivel_prioridad</a>
+    
+    <li ><a href="#method-i-numero_personas">#numero_personas</a>
     
   </ul>
 </div>
@@ -168,6 +172,39 @@
        </header>
 
     
+      <div id="method-i-incrementar_contador" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">incrementar_contador</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Incrementa el contador de personas. Este método se llama para aumentar en uno el número total de personas cada vez que se crea una nueva instancia de <a href="Persona.html"><code>Persona</code></a> o sus subclases.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="incrementar_contador-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/functions.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">incrementar_contador</span>
+  <span class="ruby-identifier">$numero_personas</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-nivel_prioridad" class="method-detail ">
         
         <div class="method-heading">
@@ -228,6 +265,41 @@
     <span class="ruby-comment"># Si la diferencia es mayor que el rango del Nivel IV, se considera el Nivel V (atención en 60 minutos)</span>
     <span class="ruby-keyword">return</span> <span class="ruby-string">&#39;Nivel V (Negro) - No urgente, atención en 60 minutos&#39;</span>
   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-numero_personas" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">numero_personas</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve el número total de personas creadas.</p>
+
+<p>@return [Integer] El número total de personas creadas hasta el momento.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="numero_personas-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/functions.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">numero_personas</span>
+  <span class="ruby-identifier">$numero_personas</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
