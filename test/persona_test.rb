@@ -13,6 +13,7 @@ class TestPersonas < Test::Unit::TestCase
   # end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   def test_herencias_persona
     assert_equal(true, @persona.is_a?(Object))
     assert_equal(true, @persona.is_a?(BasicObject))
@@ -40,9 +41,33 @@ class TestPersonas < Test::Unit::TestCase
     assert_equal(true, @medico.is_a?(Persona))
     assert_equal(true, @titular.is_a?(Persona))
     assert_equal(true, @titular.is_a?(Medico))
+=======
+  def test_herencias_persona
+>>>>>>> 9376bc1 (documentación)
     assert_equal(true, @persona.is_a?(Object))
+    assert_equal(true, @persona.is_a?(BasicObject))
+  end
 
+<<<<<<< HEAD
 >>>>>>> 6e21746 (test herencia)
+=======
+  def test_herencias_paciente
+    assert_equal(true, @paciente.is_a?(Object))
+    assert_equal(true, @paciente.is_a?(BasicObject))
+    assert_equal(true, @paciente.is_a?(Persona))
+  end
+
+  def test_herencias_medico
+    assert_equal(true, @medico.is_a?(Object))
+    assert_equal(true, @medico.is_a?(BasicObject))
+    assert_equal(true, @medico.is_a?(Persona))
+  end
+
+  def test_herencias_titular
+    assert_equal(true, @titular.is_a?(Object))
+    assert_equal(true, @titular.is_a?(BasicObject))
+    assert_equal(true, @titular.is_a?(Persona))
+>>>>>>> 9376bc1 (documentación)
   end
 
   def test_calcula_edad
