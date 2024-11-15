@@ -12,6 +12,15 @@ class TestPersonas < Test::Unit::TestCase
   #   assert_equal(3, numero_personas)
   # end
 
+  def test_herencias
+    assert_equal(true, @paciente.is_a?(Persona))
+    assert_equal(true, @medico.is_a?(Persona))
+    assert_equal(true, @titular.is_a?(Persona))
+    assert_equal(true, @titular.is_a?(Medico))
+    assert_equal(true, @persona.is_a?(Object))
+
+  end
+
   def test_calcula_edad
     assert_equal(34, @persona.edad)
   end
