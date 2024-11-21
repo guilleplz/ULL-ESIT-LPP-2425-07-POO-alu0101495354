@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Comparable_test < Test::Unit::TestCase
+class TestComparableFecha < Test::Unit::TestCase
   def setup
     @fecha1 = Fecha.new(2024, 1, 1)
     @fecha2 = Fecha.new(2024, 1, 2)
