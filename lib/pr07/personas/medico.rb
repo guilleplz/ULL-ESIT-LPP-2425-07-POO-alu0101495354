@@ -1,6 +1,9 @@
 # Clase que representa a un médico, heredando de la clase Persona.
 # Un médico tiene una especialidad y una lista de pacientes.
 class Medico < Persona
+
+  include Comparable
+
   # Atributos de lectura para acceder a la especialidad y la lista de pacientes.
   attr_reader :especialidad, :pacientes
 
@@ -31,4 +34,15 @@ class Medico < Persona
   def numero_pacientes
     @pacientes.size
   end
+
+  def ==(other)
+    return nil unless other.is_a?(Medico)
+    self.numero_pacientes == other.numero_pacientes
+  end
+
+  def <=>(other)
+    return nil unless other.is_a?(Medico)
+    self.numero_pacientes <=> other.numero_pacientes
+  end
+
 end
