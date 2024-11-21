@@ -3,6 +3,7 @@
 class Paciente < Persona
 
   include Comparable
+  include Enumerable
 
   # Atributos de lectura para acceder a la prioridad y la lista de diagnósticos.
   attr_reader :prioridad, :diagnosticos
@@ -25,6 +26,10 @@ class Paciente < Persona
   def <=>(other)
     return nil unless other.is_a?(Paciente)
     self.prioridad <=> other.prioridad
+  end
+
+  def each
+    @diagnosticos.each { |diagnostico| yield diagnostico }
   end
 
   # Agrega un diagnóstico a la lista de diagnósticos del paciente.
