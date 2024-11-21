@@ -6,6 +6,7 @@ require_relative './constants'  # Carga las constantes desde otro archivo
 # Esta clase permite definir un nivel de triaje que representa la prioridad de atención médica
 # según los criterios del SET, donde el nivel 1 es el más urgente (Reanimación) y el nivel 5 es el menos urgente.
 class NivelTriaje
+  include Comparable
   # Nivel de triaje en forma de número (1 a 5)
   # @return [Integer] el nivel de triaje, que puede ser un número entre 1 y 5
   attr_reader :nivel
@@ -39,4 +40,9 @@ class NivelTriaje
     else DESCONOCIDO              # En caso de que el nivel no sea válido, devuelve "Desconocido"
     end
   end
+
+  def <=>(other)
+    @nivel <=> other.nivel
+  end
+
 end
