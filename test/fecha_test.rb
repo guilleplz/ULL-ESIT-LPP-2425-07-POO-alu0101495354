@@ -38,4 +38,11 @@ class TestFecha < Test::Unit::TestCase
     assert_equal({ anios: 0, meses: 0, dias: 1 }, diferencia2)
   end
 
+  # Test para diferencia de años entre dos fechas
+  def test_diferencia_anios
+    fecha_otra = Fecha.new(2000, 11, 21)
+    diferencia = @fecha1.diferencia_anios(fecha_otra)
+    assert_equal 23, diferencia  # 2024 - 2000 = 24 años
+  end
+
 end

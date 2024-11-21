@@ -33,4 +33,10 @@ class TestEnumerableNivelTriaje < Test::Unit::TestCase
     niveles_ordenados = [@nivel1, @nivel2, @nivel3, @nivel4, @nivel5].sort
     assert_equal [1, 2, 3, 4, 5], niveles_ordenados.map(&:nivel)
   end
+
+  # Test para reverse: invertir el orden de los niveles
+  def test_reverse
+    niveles_invertidos = [@nivel1, @nivel2, @nivel3, @nivel4, @nivel5].reverse
+    assert_equal [5, 4, 3, 2, 1], niveles_invertidos.map(&:nivel)
+  end
 end

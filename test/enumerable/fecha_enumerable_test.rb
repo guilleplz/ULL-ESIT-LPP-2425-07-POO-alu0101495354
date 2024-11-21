@@ -22,10 +22,15 @@ class TestEnumerableFecha < Test::Unit::TestCase
     assert_equal [2024, 21], componentes_mayores_20
   end
 
-  # Test para diferencia de años entre dos fechas
-  def test_diferencia_anios
-    fecha_otra = Fecha.new(2000, 11, 21)
-    diferencia = @fecha.diferencia_anios(fecha_otra)
-    assert_equal 24, diferencia  # 2024 - 2000 = 24 años
+  # Test para sort: ordenar los componentes de la fecha
+  def test_sort
+    componentes_ordenados = @fecha.sort
+    assert_equal [11, 21, 2024], componentes_ordenados
+  end
+
+  # Test para reduce: sumar todos los componentes de la fecha
+  def test_reduce
+    suma_componentes = @fecha.reduce(0) { |sum, componente| sum + componente }
+    assert_equal 2056, suma_componentes
   end
 end

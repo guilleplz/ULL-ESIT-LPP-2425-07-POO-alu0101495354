@@ -40,6 +40,13 @@ class TestHora < Test::Unit::TestCase
     assert_equal({ horas: 0, minutos: 0, segundos: 25 }, diferencia)
   end
 
+  # Test para diferencia de segundos entre dos horas
+  def test_diferencia_segundos
+    hora_otra = Hora.new(9, 45, 30)
+    diferencia = @hora1.diferencia_segundos(hora_otra)
+    assert_equal 10164, diferencia
+  end
+
 
 
 end

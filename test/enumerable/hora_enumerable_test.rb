@@ -24,10 +24,15 @@ class TestEnumerableHora < Test::Unit::TestCase
     assert_equal [45], componentes_mayores_30
   end
 
-  # Test para diferencia de segundos entre dos horas
-  def test_diferencia_segundos
-    hora_otra = Hora.new(9, 45, 30)
-    diferencia = @hora.diferencia_segundos(hora_otra)
-    assert_equal 2715, diferencia
+  # Test para sort: ordenar los componentes de la hora
+  def test_sort
+    componentes_ordenados = @hora.sort
+    assert_equal [10, 30, 45], componentes_ordenados
+  end
+
+  # Test para reduce: sumar todos los componentes de la hora
+  def test_reduce
+    suma_componentes = @hora.reduce(0) { |sum, componente| sum + componente }
+    assert_equal 85, suma_componentes
   end
 end

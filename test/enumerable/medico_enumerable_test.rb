@@ -40,4 +40,10 @@ class TestEnumerableMedico < Test::Unit::TestCase
     paciente_encontrado = @medico.find { |paciente| paciente.nombre_completo == "Ana García" }
     assert_equal "Ana García", paciente_encontrado.nombre_completo
   end
+
+  # Test de reject: excluir pacientes cuyo nombre no contiene "Juan"
+  def test_reject
+    pacientes_sin_juan = @medico.reject { |paciente| paciente.nombre_completo.include?("Juan") }
+    assert_equal ["Ana García"], pacientes_sin_juan.map(&:nombre_completo)
+  end
 end

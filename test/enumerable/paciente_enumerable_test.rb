@@ -35,4 +35,10 @@ class TestEnumerablePaciente < Test::Unit::TestCase
     resultados = @paciente2.all? { |diagnostico| diagnostico.include?("alta") }
     assert_equal false, resultados  # No todos los diagnósticos contienen "alta"
   end
+
+  # Test de any? : verificar si al menos un diagnóstico contiene la palabra "Tos"
+  def test_any?
+    resultados = @paciente2.any? { |diagnostico| diagnostico.include?("Tos") }
+    assert_equal true, resultados  # Al menos uno de los diagnósticos contiene "Tos"
+  end
 end
