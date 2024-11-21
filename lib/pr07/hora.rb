@@ -1,6 +1,7 @@
 # Clase Hora que representa una hora del día (hora, minuto, segundo)
 class Hora
   include Comparable
+  include Enumerable
   # Accesores solo de lectura para hora, minuto y segundo
   # @return [Integer] la hora, minuto o segundo
   attr_reader :hora, :minuto, :segundo
@@ -68,5 +69,19 @@ class Hora
   def <=>(other)
     [@hora, @minuto, @segundo] <=> [other.hora, other.minuto, other.segundo]
   end
+
+  def each
+    [@hora, @minuto, @segundo].each { |componente| yield componente }
+  end
+
+  def diferencia_segundos(otra_hora)
+    (self.total_segundos - otra_hora.total_segundos).abs
+  end
+
+  def total_segundos
+    @hora * 3600 + @minuto * 60 + @segundo
+  end
+
+
 
 end
