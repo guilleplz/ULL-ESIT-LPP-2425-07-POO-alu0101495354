@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestNivelTriaje < Test::Unit::TestCase
+class TestComparableNivelTriaje < Test::Unit::TestCase
   # Este método se ejecutará antes de cada prueba
   def setup
     @nivel1 = NivelTriaje.new(1)  # Reanimación

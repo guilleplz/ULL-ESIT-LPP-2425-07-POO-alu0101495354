@@ -1,4 +1,4 @@
-class TestPaciente < Test::Unit::TestCase
+class TestComparablePaciente < Test::Unit::TestCase
   def setup
     # Creamos algunos pacientes con diferentes prioridades
     @paciente1 = Paciente.new("1", "Juan", "Pérez", "Masculino", Fecha.new(1990, 1, 1), 2)

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestPersona < Test::Unit::TestCase
+class TestComparablePersona < Test::Unit::TestCase
   def setup
     # Creamos personas con distintas edades
     @persona1 = Persona.new("1", "Juan", "Pérez", "Masculino", Fecha.new(1990, 1, 1))

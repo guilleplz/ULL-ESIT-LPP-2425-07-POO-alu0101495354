@@ -44,19 +44,6 @@ class Persona
     "#{nombre_completo}, #{sexo}, #{edad} años"
   end
 
-  # Método para comparar dos personas.
-  #
-  # @param otra_persona [Persona, Medico, Titular, Paciente] La persona a comparar.
-  # @return [Boolean] true si ambas personas son iguales, false si no lo son.
-  def ==(otra_persona)
-    return false unless otra_persona.is_a?(Persona) || otra_persona.is_a?(Medico) || otra_persona.is_a?(Titular) || otra_persona.is_a?(Paciente)
-
-    self.id == otra_persona.id &&
-    self.nombre_completo == otra_persona.nombre_completo &&
-    self.sexo == otra_persona.sexo &&
-    self.fecha_nacimiento == otra_persona.fecha_nacimiento
-  end
-
   def ==(otra_persona)
     return false unless otra_persona.is_a?(Persona)
     self.fecha_nacimiento == otra_persona.fecha_nacimiento
