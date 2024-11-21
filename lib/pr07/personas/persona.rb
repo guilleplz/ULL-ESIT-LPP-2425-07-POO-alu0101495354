@@ -1,6 +1,8 @@
 # Clase que representa a una persona.
 # Esta clase es la clase base para otros tipos de personas, como Medico, Titular y Paciente.
 class Persona
+  include Comparable
+
   # Atributos de lectura para acceder al ID y sexo de la persona.
   attr_reader :id, :sexo
 
@@ -53,6 +55,16 @@ class Persona
     self.nombre_completo == otra_persona.nombre_completo &&
     self.sexo == otra_persona.sexo &&
     self.fecha_nacimiento == otra_persona.fecha_nacimiento
+  end
+
+  def ==(otra_persona)
+    return false unless otra_persona.is_a?(Persona)
+    self.fecha_nacimiento == otra_persona.fecha_nacimiento
+  end
+
+  # Método de comparación con el módulo Comparable basado en la edad
+  def <=>(otra_persona)
+    self.edad <=> otra_persona.edad
   end
 
   protected
