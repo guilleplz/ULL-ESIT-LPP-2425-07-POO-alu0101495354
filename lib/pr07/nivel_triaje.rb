@@ -7,6 +7,7 @@ require_relative './constants'  # Carga las constantes desde otro archivo
 # según los criterios del SET, donde el nivel 1 es el más urgente (Reanimación) y el nivel 5 es el menos urgente.
 class NivelTriaje
   include Comparable
+  include Enumerable
   # Nivel de triaje en forma de número (1 a 5)
   # @return [Integer] el nivel de triaje, que puede ser un número entre 1 y 5
   attr_reader :nivel
@@ -44,5 +45,10 @@ class NivelTriaje
   def <=>(other)
     @nivel <=> other.nivel
   end
+
+  def each
+    yield @nivel
+  end
+
 
 end
