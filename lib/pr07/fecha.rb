@@ -80,15 +80,6 @@ class Fecha
     years
   end
 
-  def ==(otra_fecha)
-    return false unless otra_fecha.is_a?(Fecha)
-
-    self.dia == otra_fecha.dia &&
-    self.mes == otra_fecha.mes &&
-    self.anio == otra_fecha.anio
-  end
-
-
   def <=>(other)
     [anio, mes, dia] <=> [other.anio, other.mes, other.dia]
   end

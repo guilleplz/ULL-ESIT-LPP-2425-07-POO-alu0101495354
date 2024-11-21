@@ -13,5 +13,3 @@ require_relative "pr07/personas/titular"
 module Pr07
   class Error < StandardError; end
 end
-
-a
