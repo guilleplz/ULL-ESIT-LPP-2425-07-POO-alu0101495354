@@ -3,6 +3,7 @@
 class Medico < Persona
 
   include Comparable
+  include Enumerable
 
   # Atributos de lectura para acceder a la especialidad y la lista de pacientes.
   attr_reader :especialidad, :pacientes
@@ -44,5 +45,10 @@ class Medico < Persona
     return nil unless other.is_a?(Medico)
     self.numero_pacientes <=> other.numero_pacientes
   end
+
+  def each
+    @pacientes.each { |paciente| yield paciente }
+  end
+
 
 end
