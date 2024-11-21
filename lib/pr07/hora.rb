@@ -1,5 +1,6 @@
 # Clase Hora que representa una hora del día (hora, minuto, segundo)
 class Hora
+  include Comparable
   # Accesores solo de lectura para hora, minuto y segundo
   # @return [Integer] la hora, minuto o segundo
   attr_reader :hora, :minuto, :segundo
@@ -63,4 +64,9 @@ class Hora
       segundos: segundo_diff
     }
   end
+
+  def <=>(other)
+    [@hora, @minuto, @segundo] <=> [other.hora, other.minuto, other.segundo]
+  end
+
 end
