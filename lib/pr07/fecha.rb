@@ -1,5 +1,7 @@
 # Clase Fecha que representa una fecha del año (año, mes, dia)
 class Fecha
+  include Comparable
+
   # Accesores solo de lectura para año, mes y día
   # @return [Integer] el año, mes o día
   attr_reader :anio, :mes, :dia
@@ -84,6 +86,11 @@ class Fecha
     self.dia == otra_fecha.dia &&
     self.mes == otra_fecha.mes &&
     self.anio == otra_fecha.anio
+  end
+
+
+  def <=>(other)
+    [anio, mes, dia] <=> [other.anio, other.mes, other.dia]
   end
 
 
