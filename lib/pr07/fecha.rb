@@ -1,6 +1,7 @@
 # Clase Fecha que representa una fecha del año (año, mes, dia)
 class Fecha
   include Comparable
+  include Enumerable
 
   # Accesores solo de lectura para año, mes y día
   # @return [Integer] el año, mes o día
@@ -82,6 +83,10 @@ class Fecha
 
   def <=>(other)
     [anio, mes, dia] <=> [other.anio, other.mes, other.dia]
+  end
+
+  def each(&block)
+    [@anio, @mes, @dia].each(&block)
   end
 
 
