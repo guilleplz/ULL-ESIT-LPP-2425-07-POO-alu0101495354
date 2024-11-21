@@ -1,6 +1,9 @@
 # Clase que representa a un titular, que es un tipo especializado de médico.
 # Un titular tiene un número máximo de pacientes que puede atender.
 class Titular < Medico
+
+  include Comparable
+  
   # Atributo de lectura para acceder al número máximo de pacientes.
   attr_reader :max_pacientes
 
@@ -25,4 +28,10 @@ class Titular < Medico
   def carga_maxima?
     @pacientes.size >= @max_pacientes
   end
+
+  def <=>(other)
+    return nil unless other.is_a?(Titular)
+    self.max_pacientes <=> other.max_pacientes
+  end
+
 end
