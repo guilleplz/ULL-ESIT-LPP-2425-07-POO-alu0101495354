@@ -1,6 +1,9 @@
 # Clase que representa a un paciente, heredando de la clase Persona.
 # Un paciente tiene una prioridad y una lista de diagnósticos.
 class Paciente < Persona
+
+  include Comparable
+
   # Atributos de lectura para acceder a la prioridad y la lista de diagnósticos.
   attr_reader :prioridad, :diagnosticos
 
@@ -17,6 +20,11 @@ class Paciente < Persona
     super(id, nombre, apellido, sexo, fecha_nacimiento)  # Esto invoca el constructor de Persona
     @prioridad = prioridad
     @diagnosticos = []
+  end
+
+  def <=>(other)
+    return nil unless other.is_a?(Paciente)
+    self.prioridad <=> other.prioridad
   end
 
   # Agrega un diagnóstico a la lista de diagnósticos del paciente.
