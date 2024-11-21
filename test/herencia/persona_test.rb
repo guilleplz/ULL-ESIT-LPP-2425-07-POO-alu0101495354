@@ -8,10 +8,6 @@ class TestPersonas < Test::Unit::TestCase
     @titular = Titular.new(4, "Carlos", "López", "Masculino", Fecha.new(1980, 10, 25), "Geriatría", 3)
   end
 
-  # def test_numero_personas
-  #   assert_equal(3, numero_personas)
-  # end
-
   def test_herencias_persona
     assert_equal(true, @persona.is_a?(Object))
     assert_equal(true, @persona.is_a?(BasicObject))
@@ -80,21 +76,21 @@ class TestPersonas < Test::Unit::TestCase
     persona = Persona.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10))
     paciente = Paciente.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10), EMERGENCIA)
 
-    assert(persona == paciente)  # Ahora debería pasar
+    assert(persona == paciente) 
   end
 
   def test_igualdad_entre_persona_y_medico
     persona = Persona.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10))
     medico = Medico.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10), "General")
 
-    assert(persona == medico)  # Ahora debería pasar
+    assert(persona == medico)
   end
 
   def test_igualdad_entre_persona_y_titular
     persona = Persona.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10))
     titular = Titular.new(1, "Juan", "Pérez", "Masculino", Fecha.new(1990, 5, 10), "General", 2)
 
-    assert(persona == titular)  # Ahora debería pasar
+    assert(persona == titular)
   end
 
 
