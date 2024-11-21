@@ -3,7 +3,8 @@
 class Titular < Medico
 
   include Comparable
-  
+  include Enumerable
+
   # Atributo de lectura para acceder al número máximo de pacientes.
   attr_reader :max_pacientes
 
@@ -32,6 +33,10 @@ class Titular < Medico
   def <=>(other)
     return nil unless other.is_a?(Titular)
     self.max_pacientes <=> other.max_pacientes
+  end
+
+  def each(&block)
+    @pacientes.each(&block)
   end
 
 end
