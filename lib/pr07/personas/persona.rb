@@ -2,6 +2,7 @@
 # Esta clase es la clase base para otros tipos de personas, como Medico, Titular y Paciente.
 class Persona
   include Comparable
+  include Enumerable
 
   # Atributos de lectura para acceder al ID y sexo de la persona.
   attr_reader :id, :sexo
@@ -20,6 +21,10 @@ class Persona
     @nombre = nombre
     @apellido = apellido
     incrementar_contador
+  end
+
+  def get_fecha_nacimiento
+    @fecha_nacimiento
   end
 
   # Devuelve el nombre completo de la persona (nombre y apellido).
@@ -53,6 +58,15 @@ class Persona
   def <=>(otra_persona)
     self.edad <=> otra_persona.edad
   end
+
+  def each
+    yield @id
+    yield @nombre
+    yield @apellido
+    yield @sexo
+    yield @fecha_nacimiento
+  end
+
 
   protected
 
