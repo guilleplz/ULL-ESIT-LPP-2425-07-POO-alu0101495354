@@ -5,3 +5,8 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem "minitest", "~> 5.0"
+<<<<<<< HEAD
+=======
+gem "test-unit"
+gem "rdoc"
+>>>>>>> dev

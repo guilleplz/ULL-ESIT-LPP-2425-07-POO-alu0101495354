@@ -1,6 +1,9 @@
 # Pr07
  
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev
 ## Clase NivelTriaje
 
 ### Descripción General
