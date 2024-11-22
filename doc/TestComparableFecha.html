@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestComparableFecha - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Test::Unit::TestCase
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-setup">#setup</a>
+    
+    <li ><a href="#method-i-test_comparacion_igual">#test_comparacion_igual</a>
+    
+    <li ><a href="#method-i-test_comparacion_mayor">#test_comparacion_mayor</a>
+    
+    <li ><a href="#method-i-test_comparacion_menor">#test_comparacion_menor</a>
+    
+    <li ><a href="#method-i-test_fecha_entre_rango">#test_fecha_entre_rango</a>
+    
+    <li ><a href="#method-i-test_fecha_igual">#test_fecha_igual</a>
+    
+    <li ><a href="#method-i-test_fecha_mayor">#test_fecha_mayor</a>
+    
+    <li ><a href="#method-i-test_fecha_menor">#test_fecha_menor</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestComparableFecha">
+  <h1 id="class-TestComparableFecha" class="class">
+    class TestComparableFecha
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-setup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-ivar">@fecha1</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>)
+  <span class="ruby-ivar">@fecha2</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>)
+  <span class="ruby-ivar">@fecha3</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>)
+  <span class="ruby-ivar">@fecha4</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">1</span>, <span class="ruby-value">5</span>)
+  <span class="ruby-ivar">@fecha5</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">1</span>, <span class="ruby-value">6</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_comparacion_igual" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_comparacion_igual</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_comparacion_igual-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_comparacion_igual</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">0</span>, <span class="ruby-ivar">@fecha1</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-ivar">@fecha3</span>, <span class="ruby-string">&quot;El operador &lt;=&gt; no devolvió 0 para fechas iguales&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_comparacion_mayor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_comparacion_mayor</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_comparacion_mayor-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_comparacion_mayor</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-ivar">@fecha2</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-ivar">@fecha1</span>, <span class="ruby-string">&quot;El operador &lt;=&gt; no devolvió 1 cuando fecha2 es mayor que fecha1&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_comparacion_menor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_comparacion_menor</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_comparacion_menor-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_comparacion_menor</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">-1</span>, <span class="ruby-ivar">@fecha1</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-ivar">@fecha2</span>, <span class="ruby-string">&quot;El operador &lt;=&gt; no devolvió -1 cuando fecha1 es menor que fecha2&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_fecha_entre_rango" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_fecha_entre_rango</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prueba con between?</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_fecha_entre_rango-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_fecha_entre_rango</span>
+  <span class="ruby-comment"># Verifica que fecha2 esté dentro del rango de fecha1 a fecha4</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@fecha2</span>.<span class="ruby-identifier">between?</span>(<span class="ruby-ivar">@fecha1</span>, <span class="ruby-ivar">@fecha4</span>), <span class="ruby-string">&quot;Se esperaba que fecha2 estuviera entre fecha1 y fecha4&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_fecha_igual" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_fecha_igual</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_fecha_igual-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_fecha_igual</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@fecha1</span>, <span class="ruby-ivar">@fecha3</span>, <span class="ruby-string">&quot;Se esperaba que fecha1 y fecha3 fueran iguales&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_fecha_mayor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_fecha_mayor</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_fecha_mayor-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_fecha_mayor</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@fecha2</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@fecha1</span>, <span class="ruby-string">&quot;Se esperaba que la fecha2 fuera mayor que fecha1&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_fecha_menor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_fecha_menor</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_fecha_menor-source">
+            <pre><span class="ruby-comment"># File test/comparable/fecha_comparable_test.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_fecha_menor</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@fecha1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@fecha2</span>, <span class="ruby-string">&quot;Se esperaba que la fecha1 fuera menor que fecha2&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
