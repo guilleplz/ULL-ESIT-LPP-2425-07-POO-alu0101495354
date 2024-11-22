@@ -5,6 +5,8 @@ class TestComparableFecha < Test::Unit::TestCase
     @fecha1 = Fecha.new(2024, 1, 1)
     @fecha2 = Fecha.new(2024, 1, 2)
     @fecha3 = Fecha.new(2024, 1, 1)
+    @fecha4 = Fecha.new(2024, 1, 5)
+    @fecha5 = Fecha.new(2024, 1, 6)
   end
 
   def test_fecha_menor
@@ -31,4 +33,9 @@ class TestComparableFecha < Test::Unit::TestCase
     assert_equal(1, @fecha2 <=> @fecha1, "El operador <=> no devolvió 1 cuando fecha2 es mayor que fecha1")
   end
 
+  # Prueba con between?
+  def test_fecha_entre_rango
+    # Verifica que fecha2 esté dentro del rango de fecha1 a fecha4
+    assert(@fecha2.between?(@fecha1, @fecha4), "Se esperaba que fecha2 estuviera entre fecha1 y fecha4")
+  end
 end

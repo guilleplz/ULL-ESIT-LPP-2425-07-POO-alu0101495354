@@ -28,4 +28,8 @@ class TestComparableNivelTriaje < Test::Unit::TestCase
   def test_comparacion_urgencia
     assert(@nivel1 < @nivel3)  # Nivel 1 es más urgente que Nivel 5
   end
+
+  def test_between
+    assert_equal(true, @nivel2.between?(@nivel1, @nivel4))
+  end
 end

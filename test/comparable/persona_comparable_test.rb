@@ -27,4 +27,8 @@ class TestComparablePersona < Test::Unit::TestCase
     assert_equal(@persona3, @persona5)  # Persona3 y persona5 tienen la misma fecha de nacimiento
   end
 
+  def test_between
+    assert_equal(true, @persona1.between?(@persona5, @persona2))
+  end
+
 end

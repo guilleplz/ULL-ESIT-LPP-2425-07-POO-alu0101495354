@@ -40,4 +40,10 @@ class TestComparableMedico < Test::Unit::TestCase
     assert(@medico1 == @medico4)  # @medico1 y @medico4 tienen el mismo número de pacientes
   end
 
+  def test_comparacion_menor_igual_pacientes
+    # Comprobamos que @medico1 tiene entre 2 y 3 pacientes
+    assert(@medico1.between?(@medico2, @medico3))
+    # Los médicos con menos de 3 pacientes, deben ser comparados con el número mínimo y máximo
+  end
+
 end

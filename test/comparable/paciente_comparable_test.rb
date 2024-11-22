@@ -30,4 +30,8 @@ class TestComparablePaciente < Test::Unit::TestCase
     @paciente1.agregar_diagnostico("Fiebre alta")
     assert_equal("Fiebre alta", @paciente1.ultimo_diagnostico)
   end
+
+  def test_between
+    assert_equal(true, @paciente1.between?(@paciente2, @paciente3))
+  end
 end

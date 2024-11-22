@@ -41,4 +41,8 @@ class TestComparableHora < Test::Unit::TestCase
   def test_comparacion_hora_mayor
     assert(@hora1 > @hora4)  # @hora1 es mayor que @hora4 porque la hora es mayor
   end
+
+  def test_hora_between
+    assert(@hora1.between?(@hora5, @hora3))  # @hora1 está entre @hora5 y @hora3
+  end
 end
