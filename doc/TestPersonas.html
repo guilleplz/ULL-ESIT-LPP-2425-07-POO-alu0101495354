@@ -81,7 +81,13 @@
     
     <li ><a href="#method-i-test_carga_maxima_titular">#test_carga_maxima_titular</a>
     
-    <li ><a href="#method-i-test_herencias">#test_herencias</a>
+    <li ><a href="#method-i-test_herencias_medico">#test_herencias_medico</a>
+    
+    <li ><a href="#method-i-test_herencias_paciente">#test_herencias_paciente</a>
+    
+    <li ><a href="#method-i-test_herencias_persona">#test_herencias_persona</a>
+    
+    <li ><a href="#method-i-test_herencias_titular">#test_herencias_titular</a>
     
     <li ><a href="#method-i-test_igualdad_entre_objetos">#test_igualdad_entre_objetos</a>
     
@@ -148,7 +154,7 @@
 
           
           <div class="method-source-code" id="setup-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 4</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 4</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
   <span class="ruby-ivar">@persona</span> = <span class="ruby-constant">Persona</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>))
   <span class="ruby-ivar">@paciente</span> = <span class="ruby-constant">Paciente</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;Ana&quot;</span>, <span class="ruby-string">&quot;García&quot;</span>, <span class="ruby-string">&quot;Femenino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1985</span>, <span class="ruby-value">8</span>, <span class="ruby-value">20</span>), <span class="ruby-constant">EMERGENCIA</span>)
@@ -184,7 +190,7 @@
 
           
           <div class="method-source-code" id="test_calcula_edad-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 24</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_calcula_edad</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">34</span>, <span class="ruby-ivar">@persona</span>.<span class="ruby-identifier">edad</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -217,7 +223,7 @@
 
           
           <div class="method-source-code" id="test_carga_maxima_titular-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 50</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_carga_maxima_titular</span>
   <span class="ruby-identifier">paciente1</span> = <span class="ruby-constant">Paciente</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">7</span>, <span class="ruby-string">&quot;Luis&quot;</span>, <span class="ruby-string">&quot;Ramos&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1988</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>), <span class="ruby-constant">NO_URGENTE</span>)
   <span class="ruby-identifier">paciente2</span> = <span class="ruby-constant">Paciente</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">8</span>, <span class="ruby-string">&quot;Eva&quot;</span>, <span class="ruby-string">&quot;Domínguez&quot;</span>, <span class="ruby-string">&quot;Femenino&quot;</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">4</span>, <span class="ruby-value">4</span>), <span class="ruby-constant">EMERGENCIA</span>)
@@ -237,10 +243,10 @@
       </div>
 
     
-      <div id="method-i-test_herencias" class="method-detail ">
+      <div id="method-i-test_herencias_medico" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">test_herencias</span><span
+          <span class="method-name">test_herencias_medico</span><span
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -250,25 +256,121 @@
 
         <div class="method-description">
           
-          <p>def test_numero_personas</p>
-
-<pre class="ruby"><span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">3</span>, <span class="ruby-identifier">numero_personas</span>)
-</pre>
-
-<p>end</p>
+          
           
           
 
           
-          <div class="method-source-code" id="test_herencias-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 15</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_herencias</span>
-  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@paciente</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Persona</span>))
+          <div class="method-source-code" id="test_herencias_medico-source">
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_herencias_medico</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@medico</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Object</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@medico</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">BasicObject</span>))
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@medico</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Persona</span>))
-  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@titular</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Persona</span>))
-  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@titular</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Medico</span>))
-  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Object</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
 
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_herencias_paciente" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_herencias_paciente</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_herencias_paciente-source">
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_herencias_paciente</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@paciente</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Object</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@paciente</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">BasicObject</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@paciente</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Persona</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_herencias_persona" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_herencias_persona</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_herencias_persona-source">
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_herencias_persona</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Object</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">BasicObject</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_herencias_titular" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_herencias_titular</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_herencias_titular-source">
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_herencias_titular</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@titular</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Object</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@titular</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">BasicObject</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@titular</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Persona</span>))
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -299,7 +401,7 @@
 
           
           <div class="method-source-code" id="test_igualdad_entre_objetos-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 60</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_igualdad_entre_objetos</span>
   <span class="ruby-identifier">persona_igual</span> = <span class="ruby-constant">Persona</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>))
   <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@persona</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">persona_igual</span>)
@@ -333,12 +435,12 @@
 
           
           <div class="method-source-code" id="test_igualdad_entre_persona_y_medico-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 72</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_igualdad_entre_persona_y_medico</span>
   <span class="ruby-identifier">persona</span> = <span class="ruby-constant">Persona</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>))
   <span class="ruby-identifier">medico</span> = <span class="ruby-constant">Medico</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>), <span class="ruby-string">&quot;General&quot;</span>)
 
-  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">persona</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">medico</span>)  <span class="ruby-comment"># Ahora debería pasar</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">persona</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">medico</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -369,12 +471,12 @@
 
           
           <div class="method-source-code" id="test_igualdad_entre_persona_y_paciente-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 65</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_igualdad_entre_persona_y_paciente</span>
   <span class="ruby-identifier">persona</span> = <span class="ruby-constant">Persona</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>))
   <span class="ruby-identifier">paciente</span> = <span class="ruby-constant">Paciente</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>), <span class="ruby-constant">EMERGENCIA</span>)
 
-  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">persona</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">paciente</span>)  <span class="ruby-comment"># Ahora debería pasar</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">persona</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">paciente</span>) 
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -405,12 +507,12 @@
 
           
           <div class="method-source-code" id="test_igualdad_entre_persona_y_titular-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 79</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 89</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_igualdad_entre_persona_y_titular</span>
   <span class="ruby-identifier">persona</span> = <span class="ruby-constant">Persona</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>))
   <span class="ruby-identifier">titular</span> = <span class="ruby-constant">Titular</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-string">&quot;Juan&quot;</span>, <span class="ruby-string">&quot;Pérez&quot;</span>, <span class="ruby-string">&quot;Masculino&quot;</span>, <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1990</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>), <span class="ruby-string">&quot;General&quot;</span>, <span class="ruby-value">2</span>)
 
-  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">persona</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">titular</span>)  <span class="ruby-comment"># Ahora debería pasar</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">persona</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">titular</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -441,7 +543,7 @@
 
           
           <div class="method-source-code" id="test_numero_pacientes_medico-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 38</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_numero_pacientes_medico</span>
   <span class="ruby-ivar">@medico</span>.<span class="ruby-identifier">agregar_paciente</span>(<span class="ruby-ivar">@paciente</span>)
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-ivar">@medico</span>.<span class="ruby-identifier">numero_pacientes</span>)
@@ -482,7 +584,7 @@
 
           
           <div class="method-source-code" id="test_to_s-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 28</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_to_s</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Juan Pérez, Masculino, 34 años&quot;</span>, <span class="ruby-ivar">@persona</span>.<span class="ruby-identifier">to_s</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -515,7 +617,7 @@
 
           
           <div class="method-source-code" id="test_ultimo_diagnostico_paciente-source">
-            <pre><span class="ruby-comment"># File test/persona_test.rb, line 32</span>
+            <pre><span class="ruby-comment"># File test/herencia/herencia_test.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_ultimo_diagnostico_paciente</span>
   <span class="ruby-ivar">@paciente</span>.<span class="ruby-identifier">agregar_diagnostico</span>(<span class="ruby-string">&quot;grave&quot;</span>)
   <span class="ruby-ivar">@paciente</span>.<span class="ruby-identifier">agregar_diagnostico</span>(<span class="ruby-string">&quot;muy grave&quot;</span>)

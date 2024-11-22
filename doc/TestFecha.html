@@ -77,6 +77,8 @@
     
     <li ><a href="#method-i-setup">#setup</a>
     
+    <li ><a href="#method-i-test_diferencia_anios">#test_diferencia_anios</a>
+    
     <li ><a href="#method-i-test_diferencia_en_fechas">#test_diferencia_en_fechas</a>
     
     <li ><a href="#method-i-test_initializer">#test_initializer</a>
@@ -134,13 +136,48 @@
 
           
           <div class="method-source-code" id="setup-source">
-            <pre><span class="ruby-comment"># File test/fecha_test.rb, line 4</span>
+            <pre><span class="ruby-comment"># File test/basicos/fecha_test.rb, line 4</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
   <span class="ruby-ivar">@fecha1</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">2</span>, <span class="ruby-value">28</span>)
   <span class="ruby-ivar">@fecha2</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">10</span>, <span class="ruby-value">10</span>)
   <span class="ruby-ivar">@fecha3</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">11</span>, <span class="ruby-value">7</span>)
   <span class="ruby-ivar">@fecha4</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2023</span>, <span class="ruby-value">12</span>, <span class="ruby-value">31</span>)
   <span class="ruby-ivar">@fecha5</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2024</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_diferencia_anios" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_diferencia_anios</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Test para diferencia de años entre dos fechas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_diferencia_anios-source">
+            <pre><span class="ruby-comment"># File test/basicos/fecha_test.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diferencia_anios</span>
+  <span class="ruby-identifier">fecha_otra</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2000</span>, <span class="ruby-value">11</span>, <span class="ruby-value">21</span>)
+  <span class="ruby-identifier">diferencia</span> = <span class="ruby-ivar">@fecha1</span>.<span class="ruby-identifier">diferencia_anios</span>(<span class="ruby-identifier">fecha_otra</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">23</span>, <span class="ruby-identifier">diferencia</span>  <span class="ruby-comment"># 2024 - 2000 = 24 años</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -171,7 +208,7 @@
 
           
           <div class="method-source-code" id="test_diferencia_en_fechas-source">
-            <pre><span class="ruby-comment"># File test/fecha_test.rb, line 32</span>
+            <pre><span class="ruby-comment"># File test/basicos/fecha_test.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diferencia_en_fechas</span>
 
   <span class="ruby-identifier">diferencia</span> = <span class="ruby-ivar">@fecha2</span>.<span class="ruby-identifier">diferencia_en_fecha</span>(<span class="ruby-ivar">@fecha3</span>)
@@ -209,7 +246,7 @@
 
           
           <div class="method-source-code" id="test_initializer-source">
-            <pre><span class="ruby-comment"># File test/fecha_test.rb, line 12</span>
+            <pre><span class="ruby-comment"># File test/basicos/fecha_test.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_initializer</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">2024</span>, <span class="ruby-ivar">@fecha1</span>.<span class="ruby-identifier">anio</span>, <span class="ruby-string">&quot;Debería devolver el valor 2024 de la variable anio&quot;</span>)
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">2</span>, <span class="ruby-ivar">@fecha1</span>.<span class="ruby-identifier">mes</span>, <span class="ruby-string">&quot;Debería devolver el valor 2 de la variable mes&quot;</span>)
@@ -244,7 +281,7 @@
 
           
           <div class="method-source-code" id="test_initializer_invalido-source">
-            <pre><span class="ruby-comment"># File test/fecha_test.rb, line 18</span>
+            <pre><span class="ruby-comment"># File test/basicos/fecha_test.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_initializer_invalido</span>
   <span class="ruby-comment"># Verificar que se lanza un error si el año es menor o igual a 0</span>
   <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ArgumentError</span>) { <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">5</span>, <span class="ruby-value">15</span>) }

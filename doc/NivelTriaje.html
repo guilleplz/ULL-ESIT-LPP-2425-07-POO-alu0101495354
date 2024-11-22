@@ -67,7 +67,22 @@
   
 </div>
 
-    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
     
     <!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
@@ -76,6 +91,10 @@
   <ul class="link-list" role="directory">
     
     <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li ><a href="#method-i-each">#each</a>
     
     <li ><a href="#method-i-nivel_prioridad">#nivel_prioridad</a>
     
@@ -157,7 +176,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/pr07/nivel_triaje.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/pr07/nivel_triaje.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nivel</span>)
   <span class="ruby-ivar">@nivel</span> = <span class="ruby-identifier">nivel</span>
 <span class="ruby-keyword">end</span></pre>
@@ -177,6 +196,72 @@
        <header>
          <h3>Public Instance Methods</h3>
        </header>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/pr07/nivel_triaje.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-ivar">@nivel</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">nivel</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |nivel| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/pr07/nivel_triaje.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@nivel</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
 
     
       <div id="method-i-nivel_prioridad" class="method-detail ">
@@ -207,7 +292,7 @@
 
           
           <div class="method-source-code" id="nivel_prioridad-source">
-            <pre><span class="ruby-comment"># File lib/pr07/nivel_triaje.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/pr07/nivel_triaje.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nivel_prioridad</span>
   <span class="ruby-comment"># Se utiliza un case para determinar el nombre de la prioridad en función del nivel</span>
   <span class="ruby-keyword">case</span> <span class="ruby-ivar">@nivel</span>

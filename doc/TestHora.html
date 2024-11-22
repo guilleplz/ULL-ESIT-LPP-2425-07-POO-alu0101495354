@@ -81,6 +81,8 @@
     
     <li ><a href="#method-i-test_diferencia_en_tiempo_con_segundos_negativos">#test_diferencia_en_tiempo_con_segundos_negativos</a>
     
+    <li ><a href="#method-i-test_diferencia_segundos">#test_diferencia_segundos</a>
+    
     <li ><a href="#method-i-test_initialize">#test_initialize</a>
     
     <li ><a href="#method-i-test_initialize_fuera_rango">#test_initialize_fuera_rango</a>
@@ -136,7 +138,7 @@
 
           
           <div class="method-source-code" id="setup-source">
-            <pre><span class="ruby-comment"># File test/hora_test.rb, line 4</span>
+            <pre><span class="ruby-comment"># File test/basicos/hora_test.rb, line 4</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
   <span class="ruby-ivar">@hora1</span> = <span class="ruby-constant">Hora</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">12</span>, <span class="ruby-value">34</span>, <span class="ruby-value">54</span>)
   <span class="ruby-ivar">@hora2</span> = <span class="ruby-constant">Hora</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">10</span>, <span class="ruby-value">30</span>, <span class="ruby-value">45</span>)
@@ -173,7 +175,7 @@
 
           
           <div class="method-source-code" id="test_diferencia_en_tiempo-source">
-            <pre><span class="ruby-comment"># File test/hora_test.rb, line 22</span>
+            <pre><span class="ruby-comment"># File test/basicos/hora_test.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diferencia_en_tiempo</span>
 
 
@@ -212,7 +214,7 @@
 
           
           <div class="method-source-code" id="test_diferencia_en_tiempo_con_segundos_negativos-source">
-            <pre><span class="ruby-comment"># File test/hora_test.rb, line 32</span>
+            <pre><span class="ruby-comment"># File test/basicos/hora_test.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diferencia_en_tiempo_con_segundos_negativos</span>
   <span class="ruby-comment"># Crear dos instancias de Hora donde los segundos sean negativos</span>
 
@@ -222,6 +224,41 @@
 
   <span class="ruby-comment"># Verificar que la diferencia es correcta</span>
   <span class="ruby-identifier">assert_equal</span>({ <span class="ruby-value">horas:</span> <span class="ruby-value">0</span>, <span class="ruby-value">minutos:</span> <span class="ruby-value">0</span>, <span class="ruby-value">segundos:</span> <span class="ruby-value">25</span> }, <span class="ruby-identifier">diferencia</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_diferencia_segundos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_diferencia_segundos</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Test para diferencia de segundos entre dos horas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_diferencia_segundos-source">
+            <pre><span class="ruby-comment"># File test/basicos/hora_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diferencia_segundos</span>
+  <span class="ruby-identifier">hora_otra</span> = <span class="ruby-constant">Hora</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">9</span>, <span class="ruby-value">45</span>, <span class="ruby-value">30</span>)
+  <span class="ruby-identifier">diferencia</span> = <span class="ruby-ivar">@hora1</span>.<span class="ruby-identifier">diferencia_segundos</span>(<span class="ruby-identifier">hora_otra</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">10164</span>, <span class="ruby-identifier">diferencia</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -252,7 +289,7 @@
 
           
           <div class="method-source-code" id="test_initialize-source">
-            <pre><span class="ruby-comment"># File test/hora_test.rb, line 12</span>
+            <pre><span class="ruby-comment"># File test/basicos/hora_test.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_initialize</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">12</span>, <span class="ruby-ivar">@hora1</span>.<span class="ruby-identifier">hora</span>, <span class="ruby-string">&quot;debería recuperar el valor 12 de las horas&quot;</span>)
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">34</span>, <span class="ruby-ivar">@hora1</span>.<span class="ruby-identifier">minuto</span>, <span class="ruby-string">&quot;debería recuperar el valor 34 de los minutos&quot;</span>)
@@ -287,7 +324,7 @@
 
           
           <div class="method-source-code" id="test_initialize_fuera_rango-source">
-            <pre><span class="ruby-comment"># File test/hora_test.rb, line 18</span>
+            <pre><span class="ruby-comment"># File test/basicos/hora_test.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_initialize_fuera_rango</span>
   <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ArgumentError</span>) { <span class="ruby-constant">Hora</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">25</span>, <span class="ruby-value">10</span>, <span class="ruby-value">30</span>) }
 <span class="ruby-keyword">end</span></pre>

@@ -144,7 +144,7 @@
 
           
           <div class="method-source-code" id="setup-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 6</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
   <span class="ruby-ivar">@nivel1</span> = <span class="ruby-constant">NivelTriaje</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)
   <span class="ruby-ivar">@nivel2</span> = <span class="ruby-constant">NivelTriaje</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>)
@@ -183,7 +183,7 @@
 
           
           <div class="method-source-code" id="test_initialize-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 16</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_initialize</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-ivar">@nivel1</span>.<span class="ruby-identifier">nivel</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -216,7 +216,7 @@
 
           
           <div class="method-source-code" id="test_nivel_emergencia-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 24</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_nivel_emergencia</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Emergencia&quot;</span>, <span class="ruby-ivar">@nivel2</span>.<span class="ruby-identifier">nivel_prioridad</span>, <span class="ruby-string">&quot;el nivel 2 debe ser emergencia&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -249,7 +249,7 @@
 
           
           <div class="method-source-code" id="test_nivel_fuera_rango-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 40</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_nivel_fuera_rango</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Desconocido&quot;</span>, <span class="ruby-ivar">@nivel6</span>.<span class="ruby-identifier">nivel_prioridad</span>, <span class="ruby-string">&quot;el nivel 6 no debería conocerse, está fuera de rango&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -282,7 +282,7 @@
 
           
           <div class="method-source-code" id="test_nivel_menos_urgente-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 32</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_nivel_menos_urgente</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Menos urgente&quot;</span>, <span class="ruby-ivar">@nivel4</span>.<span class="ruby-identifier">nivel_prioridad</span>, <span class="ruby-string">&quot;el nivel 4 debe ser menos urgente&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -315,7 +315,7 @@
 
           
           <div class="method-source-code" id="test_nivel_no_urgente-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 36</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_nivel_no_urgente</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;No urgente&quot;</span>, <span class="ruby-ivar">@nivel5</span>.<span class="ruby-identifier">nivel_prioridad</span>, <span class="ruby-string">&quot;el nivel 5 debe ser no urgente&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -348,7 +348,7 @@
 
           
           <div class="method-source-code" id="test_nivel_reanimacion-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 20</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_nivel_reanimacion</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Reanimacion&quot;</span>, <span class="ruby-ivar">@nivel1</span>.<span class="ruby-identifier">nivel_prioridad</span>, <span class="ruby-string">&quot;el nivel 1 debe ser reanimacion&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -381,7 +381,7 @@
 
           
           <div class="method-source-code" id="test_nivel_urgente-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 28</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_nivel_urgente</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Urgente&quot;</span>, <span class="ruby-ivar">@nivel3</span>.<span class="ruby-identifier">nivel_prioridad</span>, <span class="ruby-string">&quot;el nivel 3 debe ser urgente&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -414,7 +414,7 @@
 
           
           <div class="method-source-code" id="test_tipo_dato_distinto-source">
-            <pre><span class="ruby-comment"># File test/nivel_triaje_test.rb, line 44</span>
+            <pre><span class="ruby-comment"># File test/basicos/nivel_triaje_test.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_tipo_dato_distinto</span>
   <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Desconocido&quot;</span>, <span class="ruby-ivar">@nivel7</span>.<span class="ruby-identifier">nivel_prioridad</span>, <span class="ruby-string">&quot;no se admiten otros tipos de datos&quot;</span>)
 <span class="ruby-keyword">end</span></pre>

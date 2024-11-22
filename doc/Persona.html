@@ -67,7 +67,22 @@
   
 </div>
 
-    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
     
     <!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
@@ -77,9 +92,15 @@
     
     <li ><a href="#method-c-new">::new</a>
     
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
     <li ><a href="#method-i-3D-3D">#==</a>
     
+    <li ><a href="#method-i-each">#each</a>
+    
     <li ><a href="#method-i-edad">#edad</a>
+    
+    <li ><a href="#method-i-get_fecha_nacimiento">#get_fecha_nacimiento</a>
     
     <li ><a href="#method-i-nombre_completo">#nombre_completo</a>
     
@@ -187,7 +208,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 14</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">nombre</span>, <span class="ruby-identifier">apellido</span>, <span class="ruby-identifier">sexo</span>, <span class="ruby-identifier">fecha_nacimiento</span>)
   <span class="ruby-ivar">@id</span> = <span class="ruby-identifier">id</span>
   <span class="ruby-ivar">@sexo</span> = <span class="ruby-identifier">sexo</span>
@@ -214,6 +235,39 @@
        </header>
 
     
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(otra_persona)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método de comparación con el módulo Comparable basado en la edad</p>
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">otra_persona</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">edad</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">edad</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-3D-3D" class="method-detail ">
         
         <div class="method-heading">
@@ -227,22 +281,53 @@
 
         <div class="method-description">
           
-          <p>Método para comparar dos personas.</p>
-
-<p>@param otra_persona [Persona, <a href="Medico.html"><code>Medico</code></a>, <a href="Titular.html"><code>Titular</code></a>, Paciente] La persona a comparar. @return [Boolean] true si ambas personas son iguales, false si no lo son.</p>
+          
           
           
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">otra_persona</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Persona</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Medico</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Titular</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Paciente</span>)
-
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&amp;&amp;</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nombre_completo</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">nombre_completo</span> <span class="ruby-operator">&amp;&amp;</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sexo</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">sexo</span> <span class="ruby-operator">&amp;&amp;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Persona</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fecha_nacimiento</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_persona</span>.<span class="ruby-identifier">fecha_nacimiento</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |id| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@id</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@nombre</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@apellido</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@sexo</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@fecha_nacimiento</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -275,10 +360,43 @@
 
           
           <div class="method-source-code" id="edad-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edad</span>
   <span class="ruby-identifier">fecha_actual</span> = <span class="ruby-constant">Fecha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">month</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">day</span>)
   <span class="ruby-identifier">fecha_actual</span>.<span class="ruby-identifier">diferencia_anios</span>(<span class="ruby-ivar">@fecha_nacimiento</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_fecha_nacimiento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_fecha_nacimiento</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_fecha_nacimiento-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_fecha_nacimiento</span>
+  <span class="ruby-ivar">@fecha_nacimiento</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -311,7 +429,7 @@
 
           
           <div class="method-source-code" id="nombre_completo-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 26</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nombre_completo</span>
   <span class="ruby-node">&quot;#{@nombre} #{@apellido}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -346,7 +464,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 41</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/persona.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-node">&quot;#{nombre_completo}, #{sexo}, #{edad} años&quot;</span>
 <span class="ruby-keyword">end</span></pre>

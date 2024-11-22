@@ -67,7 +67,22 @@
   
 </div>
 
-    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
     
     <!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
@@ -77,7 +92,13 @@
     
     <li class="calls-super" ><a href="#method-c-new">::new</a>
     
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
     <li ><a href="#method-i-agregar_paciente">#agregar_paciente</a>
+    
+    <li ><a href="#method-i-each">#each</a>
     
     <li ><a href="#method-i-numero_pacientes">#numero_pacientes</a>
     
@@ -175,7 +196,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">nombre</span>, <span class="ruby-identifier">apellido</span>, <span class="ruby-identifier">sexo</span>, <span class="ruby-identifier">fecha_nacimiento</span>, <span class="ruby-identifier">especialidad</span>)
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">nombre</span>, <span class="ruby-identifier">apellido</span>, <span class="ruby-identifier">sexo</span>, <span class="ruby-identifier">fecha_nacimiento</span>)
   <span class="ruby-ivar">@especialidad</span> = <span class="ruby-identifier">especialidad</span>
@@ -199,6 +220,74 @@
        </header>
 
     
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Medico</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">numero_pacientes</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">numero_pacientes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Medico</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">numero_pacientes</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">numero_pacientes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-agregar_paciente" class="method-detail ">
         
         <div class="method-heading">
@@ -220,9 +309,42 @@
 
           
           <div class="method-source-code" id="agregar_paciente-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 24</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">agregar_paciente</span>(<span class="ruby-identifier">paciente</span>)
   <span class="ruby-ivar">@pacientes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">paciente</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |paciente| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+  <span class="ruby-ivar">@pacientes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">paciente</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">paciente</span> }
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -255,7 +377,7 @@
 
           
           <div class="method-source-code" id="numero_pacientes-source">
-            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">numero_pacientes</span>
   <span class="ruby-ivar">@pacientes</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span></pre>

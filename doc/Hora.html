@@ -67,7 +67,22 @@
   
 </div>
 
-    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
     
     <!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
@@ -77,7 +92,15 @@
     
     <li ><a href="#method-c-new">::new</a>
     
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
     <li ><a href="#method-i-diferencia_en_tiempo">#diferencia_en_tiempo</a>
+    
+    <li ><a href="#method-i-diferencia_segundos">#diferencia_segundos</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-total_segundos">#total_segundos</a>
     
   </ul>
 </div>
@@ -181,7 +204,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">hora</span>, <span class="ruby-identifier">minuto</span>, <span class="ruby-identifier">segundo</span>)
   <span class="ruby-comment"># Validar que la hora esté entre 0 y 23</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;La hora debe estar entre 0 y 23&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">hora</span>.<span class="ruby-identifier">between?</span>(<span class="ruby-value">0</span>, <span class="ruby-value">23</span>)
@@ -215,6 +238,39 @@
        </header>
 
     
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  [<span class="ruby-ivar">@hora</span>, <span class="ruby-ivar">@minuto</span>, <span class="ruby-ivar">@segundo</span>] <span class="ruby-operator">&lt;=&gt;</span> [<span class="ruby-identifier">other</span>.<span class="ruby-identifier">hora</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">minuto</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">segundo</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-diferencia_en_tiempo" class="method-detail ">
         
         <div class="method-heading">
@@ -244,7 +300,7 @@
 
           
           <div class="method-source-code" id="diferencia_en_tiempo-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 41</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diferencia_en_tiempo</span>(<span class="ruby-identifier">otra_hora</span>)
   <span class="ruby-comment"># Calcular la diferencia en horas, minutos y segundos</span>
   <span class="ruby-identifier">hora_diff</span> = <span class="ruby-identifier">otra_hora</span>.<span class="ruby-identifier">hora</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@hora</span>
@@ -269,6 +325,105 @@
     <span class="ruby-value">minutos:</span> <span class="ruby-identifier">minuto_diff</span>,
     <span class="ruby-value">segundos:</span> <span class="ruby-identifier">segundo_diff</span>
   }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-diferencia_segundos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">diferencia_segundos</span><span
+            class="method-args">(otra_hora)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="diferencia_segundos-source">
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diferencia_segundos</span>(<span class="ruby-identifier">otra_hora</span>)
+  (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">total_segundos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">otra_hora</span>.<span class="ruby-identifier">total_segundos</span>).<span class="ruby-identifier">abs</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |componente| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+  [<span class="ruby-ivar">@hora</span>, <span class="ruby-ivar">@minuto</span>, <span class="ruby-ivar">@segundo</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">componente</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">componente</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-total_segundos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">total_segundos</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="total_segundos-source">
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">total_segundos</span>
+  <span class="ruby-ivar">@hora</span> <span class="ruby-operator">*</span> <span class="ruby-value">3600</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@minuto</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@segundo</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

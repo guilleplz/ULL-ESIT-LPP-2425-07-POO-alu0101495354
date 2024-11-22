@@ -61,7 +61,6 @@
 
   <ul class="link-list" role="directory">
     <li><a href="#label-Pr07">Pr07</a>
-    <li><a href="#label-Clase+NivelTriaje">Clase NivelTriaje</a>
     <li><a href="#label-Descripci-C3-B3n+General">Descripción General</a>
     <li><a href="#label-Prop-C3-B3sito+de+la+Clase">Propósito de la Clase</a>
     <li><a href="#label-Atributos">Atributos</a>
@@ -79,6 +78,31 @@
     <li><a href="#label-Atributos">Atributos</a>
     <li><a href="#label-M-C3-A9todos">Métodos</a>
     <li><a href="#label-Validaci-C3-B3n+de+L-C3-ADmites">Validación de Límites</a>
+    <li><a href="#label-Clase+Persona">Clase Persona</a>
+    <li><a href="#label-Descripci-C3-B3n+General">Descripción General</a>
+    <li><a href="#label-Atributos">Atributos</a>
+    <li><a href="#label-M-C3-A9todos">Métodos</a>
+    <li><a href="#label-Visibilidad+de+Atributos">Visibilidad de Atributos</a>
+    <li><a href="#label-Clase+Paciente">Clase Paciente</a>
+    <li><a href="#label-Descripci-C3-B3n">Descripción</a>
+    <li><a href="#label-Atributos">Atributos</a>
+    <li><a href="#label-M-C3-A9todos">Métodos</a>
+    <li><a href="#label-Herencia">Herencia</a>
+    <li><a href="#label-M-C3-A9todos+adicionales">Métodos adicionales</a>
+    <li><a href="#label-Clase+Medico">Clase Medico</a>
+    <li><a href="#label-Descripci-C3-B3n">Descripción</a>
+    <li><a href="#label-Atributos">Atributos</a>
+    <li><a href="#label-M-C3-A9todos">Métodos</a>
+    <li><a href="#label-Herencia">Herencia</a>
+    <li><a href="#label-M-C3-A9todos+adicionales">Métodos adicionales</a>
+    <li><a href="#label-Clase+Titular">Clase <code>Titular</code></a>
+    <li><a href="#label-Propiedades">Propiedades</a>
+    <li><a href="#label-M-C3-A9todos">Métodos</a>
+    <li><a href="#label-initialize-28id-2C+nombre-2C+apellido-2C+sexo-2C+fecha_nacimiento-2C+especialidad-2C+max_pacientes-29"><code>initialize(id, nombre, apellido, sexo, fecha_nacimiento, especialidad, max_pacientes)</code></a>
+    <li><a href="#label-max_pacientes"><code>max_pacientes</code></a>
+    <li><a href="#label-numero_pacientes"><code>numero_pacientes</code></a>
+    <li><a href="#label-ha_alcanzado_carga_maxima-3F"><code>ha_alcanzado_carga_maxima?</code></a>
+    <li><a href="#label-to_s"><code>to_s</code></a>
   </ul>
 </div>
 
@@ -111,7 +135,27 @@
 
 <h1 id="label-Pr07"><a href="Pr07.html"><code>Pr07</code></a><span><a href="#label-Pr07">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+
+<p>=======</p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dev</p>
+
 <h2 id="label-Clase+NivelTriaje">Clase <a href="NivelTriaje.html"><code>NivelTriaje</code></a><span><a href="#label-Clase+NivelTriaje">&para;</a> <a href="#top">&uarr;</a></span></h2>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 <h3 id="label-Descripci-C3-B3n+General">Descripción General<span><a href="#label-Descripci-C3-B3n+General">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -221,6 +265,142 @@
 </li><li>
 <p>Si algún valor es inválido, se lanza un <code>ArgumentError</code>.</p>
 </li></ul>
+
+<h2 id="label-Clase+Persona">Clase <a href="Persona.html"><code>Persona</code></a><span><a href="#label-Clase+Persona">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Descripci-C3-B3n+General">Descripción General<span><a href="#label-Descripci-C3-B3n+General">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>Persona</code> representa a una persona con atributos básicos y encapsula propiedades comunes a distintas entidades (como médicos o pacientes). Incluye métodos para acceder a sus datos de manera controlada y para calcular la edad de la persona basada en su fecha de nacimiento.</p>
+
+<h3 id="label-Atributos">Atributos<span><a href="#label-Atributos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>@id</code> (público): Identificación única de la persona.</p>
+</li><li>
+<p><code>@sexo</code> (público): Género de la persona.</p>
+</li><li>
+<p><code>@fecha_nacimiento</code> (protegido): <a href="Fecha.html"><code>Fecha</code></a> de nacimiento, utilizada para calcular la edad.</p>
+</li><li>
+<p><code>@nombre</code> y <code>@apellido</code> (privados): Nombre y apellido de la persona, accesibles únicamente a través del método <code>nombre_completo</code>.</p>
+</li></ul>
+
+<h3 id="label-M-C3-A9todos">Métodos<span><a href="#label-M-C3-A9todos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>initialize(id, nombre, apellido, sexo, fecha_nacimiento)</code>: Constructor que inicializa los atributos de la persona. Al crear una instancia, aumenta el contador de personas instanciadas.</p>
+</li><li>
+<p><code>self.numero_personas</code>: Método de clase que devuelve el número de personas instanciadas.</p>
+</li><li>
+<p><code>nombre_completo</code>: Método que retorna el nombre completo de la persona como una cadena de texto.</p>
+</li><li>
+<p><code>edad</code>: Calcula y retorna la edad de la persona en años, utilizando el método <code>diferencia_anios</code> de la clase <code>Fecha</code>.</p>
+</li><li>
+<p><code>to_s</code>: Convierte la información de la persona en una cadena de texto, incluyendo nombre completo, sexo y edad.</p>
+</li></ul>
+
+<h3 id="label-Visibilidad+de+Atributos">Visibilidad de Atributos<span><a href="#label-Visibilidad+de+Atributos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>@fecha_nacimiento</code>: Atributo protegido, accesible solo dentro de la clase y sus subclases.</p>
+</li><li>
+<p><code>@nombre</code> y <code>@apellido</code>: Atributos privados, solo accesibles dentro de la clase <code>Persona</code>.</p>
+</li></ul>
+
+<h2 id="label-Clase+Paciente">Clase <a href="Paciente.html"><code>Paciente</code></a><span><a href="#label-Clase+Paciente">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Descripci-C3-B3n">Descripción<span><a href="#label-Descripci-C3-B3n">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>Paciente</code> representa a un paciente dentro del sistema sanitario. Hereda de la clase <code>Persona</code> y encapsula las propiedades específicas de un paciente, como su prioridad en el triaje y su conjunto de diagnósticos.</p>
+
+<h3 id="label-Atributos">Atributos<span><a href="#label-Atributos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Prioridad (nivel de triaje)</strong>: Un valor que indica el nivel de urgencia del paciente según el sistema de triaje (Azul, Rojo, Naranja, Verde, Negro).</p>
+</li><li>
+<p><strong>Diagnósticos</strong>: Un conjunto de diagnósticos médicos que el paciente ha recibido. Pueden ser: <code>alta</code>, <code>leve</code>, <code>grave</code>, <code>muy grave</code>.</p>
+</li></ul>
+
+<h3 id="label-M-C3-A9todos">Métodos<span><a href="#label-M-C3-A9todos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>prioridad</code></strong>: Accede al nivel de prioridad del paciente.</p>
+</li><li>
+<p><strong><code>diagnosticos</code></strong>: Accede a la lista de diagnósticos del paciente.</p>
+</li><li>
+<p><strong><code>ultimo_diagnostico</code></strong>: Devuelve el último diagnóstico asignado al paciente.</p>
+</li><li>
+<p><strong><code>to_s</code></strong>: Método de conversión a cadena que representa al paciente con su nombre completo y su prioridad.</p>
+</li></ul>
+
+<h3 id="label-Herencia">Herencia<span><a href="#label-Herencia">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>Paciente</code> hereda de la clase <code>Persona</code>, lo que significa que tiene todos los atributos y métodos de la clase <code>Persona</code>, incluyendo los métodos de acceso a nombre completo, sexo, y edad.</p>
+
+<h3 id="label-M-C3-A9todos+adicionales">Métodos adicionales<span><a href="#label-M-C3-A9todos+adicionales">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>edad</code></strong>: Calcula la edad del paciente en años utilizando la clase <code>Fecha</code>.</p>
+</li></ul>
+
+<h2 id="label-Clase+Medico">Clase <a href="Medico.html"><code>Medico</code></a><span><a href="#label-Clase+Medico">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Descripci-C3-B3n">Descripción<span><a href="#label-Descripci-C3-B3n">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>Medico</code> representa a un médico dentro del sistema sanitario. Hereda de la clase <code>Persona</code> y encapsula las propiedades específicas de un médico, como su especialidad y el conjunto de pacientes asignados.</p>
+
+<h3 id="label-Atributos">Atributos<span><a href="#label-Atributos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong>Especialidad</strong>: Una cadena que representa la especialidad del médico. Las especialidades posibles son: <code>general</code>, <code>geriatría</code>, <code>pediatría</code>.</p>
+</li><li>
+<p><strong>Pacientes asignados</strong>: Un conjunto de pacientes asignados al médico.</p>
+</li></ul>
+
+<h3 id="label-M-C3-A9todos">Métodos<span><a href="#label-M-C3-A9todos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>especialidad</code></strong>: Accede a la especialidad del médico.</p>
+</li><li>
+<p><strong><code>pacientes</code></strong>: Accede a la lista de pacientes asignados al médico.</p>
+</li><li>
+<p><strong><code>numero_pacientes</code></strong>: Devuelve el número de pacientes asignados al médico.</p>
+</li><li>
+<p><strong><code>to_s</code></strong>: Método de conversión a cadena que representa al médico con su nombre completo, especialidad y número de pacientes asignados.</p>
+</li></ul>
+
+<h3 id="label-Herencia">Herencia<span><a href="#label-Herencia">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>La clase <code>Medico</code> hereda de la clase <code>Persona</code>, lo que significa que tiene todos los atributos y métodos de la clase <code>Persona</code>, como el nombre completo, sexo y edad.</p>
+
+<h3 id="label-M-C3-A9todos+adicionales">Métodos adicionales<span><a href="#label-M-C3-A9todos+adicionales">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>edad</code></strong>: Calcula la edad del médico en años utilizando la clase <code>Fecha</code>.</p>
+</li></ul>
+
+<h2 id="label-Clase+Titular">Clase <code>Titular</code><span><a href="#label-Clase+Titular">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>La clase <code>Titular</code> representa a un médico titular, un tipo especializado de <code>Medico</code>, con la particularidad de que no puede manejar más de un número máximo de pacientes asignados, que puede variar según el médico.</p>
+
+<h3 id="label-Propiedades">Propiedades<span><a href="#label-Propiedades">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><strong><code>@max_pacientes</code></strong>: Atributo entero que almacena el número máximo de pacientes que un médico titular puede atender simultáneamente.</p>
+</li><li>
+<p><strong><code>@pacientes</code></strong>: Atributo que almacena una lista de pacientes asignados al médico titular. Esta lista se llena con instancias de la clase <code>Paciente</code>.</p>
+</li></ul>
+
+<h3 id="label-M-C3-A9todos">Métodos<span><a href="#label-M-C3-A9todos">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-initialize-28id-2C+nombre-2C+apellido-2C+sexo-2C+fecha_nacimiento-2C+especialidad-2C+max_pacientes-29"><code>initialize(id, nombre, apellido, sexo, fecha_nacimiento, especialidad, max_pacientes)</code><span><a href="#label-initialize-28id-2C+nombre-2C+apellido-2C+sexo-2C+fecha_nacimiento-2C+especialidad-2C+max_pacientes-29">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Este es el constructor de la clase. Inicializa un médico titular con los siguientes parámetros: - <code>id</code>: Identificador único de la persona. - <code>nombre</code>: Nombre del médico. - <code>apellido</code>: Apellido del médico. - <code>sexo</code>: Sexo del médico. - <code>fecha_nacimiento</code>: <a href="Fecha.html"><code>Fecha</code></a> de nacimiento del médico. - <code>especialidad</code>: Especialidad médica del médico titular. - <code>max_pacientes</code>: Número máximo de pacientes que el médico puede atender simultáneamente.</p>
+
+<h4 id="label-max_pacientes"><code>max_pacientes</code><span><a href="#label-max_pacientes">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Método getter que devuelve el número máximo de pacientes que el médico titular puede atender.</p>
+
+<h4 id="label-numero_pacientes"><code>numero_pacientes</code><span><a href="#label-numero_pacientes">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Método getter que devuelve el número de pacientes actualmente asignados al médico titular.</p>
+
+<h4 id="label-ha_alcanzado_carga_maxima-3F"><code>ha_alcanzado_carga_maxima?</code><span><a href="#label-ha_alcanzado_carga_maxima-3F">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Método que devuelve un valor booleano indicando si el médico titular ha alcanzado el número máximo de pacientes asignados. Devuelve <code>true</code> si ha alcanzado el límite, de lo contrario <code>false</code>.</p>
+
+<h4 id="label-to_s"><code>to_s</code><span><a href="#label-to_s">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Método que devuelve una representación en cadena de caracteres del objeto, que incluye el nombre completo del médico y su especialidad.</p>
 
 </main>
 

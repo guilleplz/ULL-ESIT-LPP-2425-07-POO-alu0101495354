@@ -67,7 +67,22 @@
   
 </div>
 
-    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
     
     <!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
@@ -77,11 +92,13 @@
     
     <li ><a href="#method-c-new">::new</a>
     
-    <li ><a href="#method-i-3D-3D">#==</a>
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
     
     <li ><a href="#method-i-diferencia_anios">#diferencia_anios</a>
     
     <li ><a href="#method-i-diferencia_en_fecha">#diferencia_en_fecha</a>
+    
+    <li ><a href="#method-i-each">#each</a>
     
   </ul>
 </div>
@@ -199,7 +216,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 22</span>
+            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">anio</span>, <span class="ruby-identifier">mes</span>, <span class="ruby-identifier">dia</span>)
   <span class="ruby-comment"># Validar que el año sea mayor que 0</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;El año debe ser mayor que 0&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">anio</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
@@ -234,11 +251,11 @@
        </header>
 
     
-      <div id="method-i-3D-3D" class="method-detail ">
+      <div id="method-i-3C-3D-3E" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">==</span><span
-            class="method-args">(otra_fecha)</span>
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -252,14 +269,10 @@
           
 
           
-          <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 81</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">otra_fecha</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fecha</span>)
-
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dia</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">dia</span> <span class="ruby-operator">&amp;&amp;</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">&amp;&amp;</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anio</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">anio</span>
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  [<span class="ruby-identifier">anio</span>, <span class="ruby-identifier">mes</span>, <span class="ruby-identifier">dia</span>] <span class="ruby-operator">&lt;=&gt;</span> [<span class="ruby-identifier">other</span>.<span class="ruby-identifier">anio</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">mes</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">dia</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -290,7 +303,7 @@
 
           
           <div class="method-source-code" id="diferencia_anios-source">
-            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 75</span>
+            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diferencia_anios</span>(<span class="ruby-identifier">otra_fecha</span>)
   <span class="ruby-identifier">years</span> = <span class="ruby-ivar">@anio</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">anio</span>
   <span class="ruby-identifier">years</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mes</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">||</span> (<span class="ruby-ivar">@mes</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@dia</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">dia</span>)
@@ -333,7 +346,7 @@
 
           
           <div class="method-source-code" id="diferencia_en_fecha-source">
-            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diferencia_en_fecha</span>(<span class="ruby-identifier">otra_fecha</span>)
   <span class="ruby-comment"># Calcular la diferencia en días, meses y años</span>
   <span class="ruby-identifier">dia_diff</span> = <span class="ruby-identifier">otra_fecha</span>.<span class="ruby-identifier">dia</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@dia</span>
@@ -358,6 +371,39 @@
     <span class="ruby-value">meses:</span> <span class="ruby-identifier">mes_diff</span>,
     <span class="ruby-value">dias:</span> <span class="ruby-identifier">dia_diff</span>
   }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">(&amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/pr07/fecha.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  [<span class="ruby-ivar">@anio</span>, <span class="ruby-ivar">@mes</span>, <span class="ruby-ivar">@dia</span>].<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
