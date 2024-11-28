@@ -9,6 +9,8 @@ require_relative "pr07/personas/paciente"
 require_relative "pr07/personas/functions"
 require_relative "pr07/personas/medico"
 require_relative "pr07/personas/titular"
+require_relative "pr07/servicio_salud/servicio_salud.rb"
+
 
 module Pr07
   class Error < StandardError; end
