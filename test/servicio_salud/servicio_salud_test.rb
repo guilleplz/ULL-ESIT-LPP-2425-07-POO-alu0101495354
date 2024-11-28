@@ -23,5 +23,12 @@ class ServicioSaludTest < Test::Unit::TestCase
     assert_equal "1 - hospital - 08:00:00 - 20:00:30 - [2024-01-01, 2024-12-06]", @servicio.to_s
   end
 
+  def test_asignar_paciente_a_cama
+    @servicio.asignar_paciente_a_cama(@paciente, 1)
+    assert_equal@paciente, @servicio.camas_estandar[1]
+    assert_raise(RuntimeError) { @servicio.asignar_paciente_a_cama(@paciente, 1) }
+  end
+
+
 
 end
