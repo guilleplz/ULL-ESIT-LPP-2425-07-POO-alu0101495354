@@ -33,5 +33,19 @@ class ServicioSaludTest < Test::Unit::TestCase
     assert_raise(RuntimeError) { @servicio.duracion_ocupacion_cama(2, Fecha.new(2020, 1, 1), Fecha.new(2020, 1, 3)) }
   end
 
+  def test_comparison
+    servicio2 = ServicioSalud.new(2, "hospital2", Hora.new(8, 0, 0), Hora.new(20, 0, 30), [Fecha.new(2024, 1, 1), Fecha.new(2024, 12, 6)])
+    assert_equal 1, @servicio <=> servicio2
+  end
+
+  def test_each
+    medico2 = Medico.new(2, "Pedro", "López", "Hombre", Fecha.new(1970, 1, 1), "12345678A")
+    @servicio.medicos << medico2
+    medicos = []
+    @servicio.each { |medico| medicos << medico }
+    assert_equal [@medico, medico2], medicos
+  end
+
+
 
 end
