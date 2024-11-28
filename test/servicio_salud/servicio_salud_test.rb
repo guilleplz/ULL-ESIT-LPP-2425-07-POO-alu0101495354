@@ -6,7 +6,6 @@ class ServicioSaludTest < Test::Unit::TestCase
     @paciente = Paciente.new(1, "Juan", "García", "Hombre", Fecha.new(1980, 1, 1), 1)
     @medico = Medico.new(1, "Pedro", "López", "Hombre", Fecha.new(1970, 1, 1), "12345678A")
     @servicio.medicos << @medico
-    @servicio.camas_estandar[@paciente] = Fecha.new(2020, 1, 1)
   end
 
   def test_servicio_salud
@@ -16,7 +15,6 @@ class ServicioSaludTest < Test::Unit::TestCase
     assert_equal Hora.new(20, 0, 30), @servicio.horario_cierre
     assert_equal [Fecha.new(2024, 1, 1), Fecha.new(2024, 12, 6)], @servicio.calendario_festivos
     assert_equal [@medico], @servicio.medicos
-    assert_equal({@paciente => Fecha.new(2020, 1, 1)}, @servicio.camas_estandar)
   end
 
   def test_to_s
@@ -29,6 +27,11 @@ class ServicioSaludTest < Test::Unit::TestCase
     assert_raise(RuntimeError) { @servicio.asignar_paciente_a_cama(@paciente, 1) }
   end
 
+  def test_duracion_ocupacion_cama
+    @servicio.asignar_paciente_a_cama(@paciente, 1)
+    assert_equal 1, @servicio.duracion_ocupacion_cama(1, Fecha.new(2020, 1, 1), Fecha.new(2020, 1, 2))
+    assert_raise(RuntimeError) { @servicio.duracion_ocupacion_cama(2, Fecha.new(2020, 1, 1), Fecha.new(2020, 1, 3)) }
+  end
 
 
 end
