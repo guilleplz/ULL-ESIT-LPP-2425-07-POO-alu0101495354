@@ -12,6 +12,7 @@ require_relative "pr07/personas/titular"
 require_relative "pr07/servicio_salud/servicio_salud"
 require_relative "pr07/servicio_salud/servicio_urgencias"
 require_relative "pr07/servicio_salud/servicio_hospitalizacion"
+require_relative "pr07/servicio_salud/functions"
 
 
 module Pr07
