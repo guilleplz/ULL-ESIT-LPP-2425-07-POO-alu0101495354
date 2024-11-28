@@ -17,6 +17,6 @@ class ServicioUrgencias < ServicioSalud
   end
 
   def numero_camas_libres
-    @camas_uci_disponibles + @camas_estandar.count
+    @camas_uci_disponibles + @camas_estandar.values.count(nil)
   end
 end
