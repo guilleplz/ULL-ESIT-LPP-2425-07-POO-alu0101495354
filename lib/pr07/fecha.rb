@@ -84,6 +84,23 @@ class Fecha
     years
   end
 
+  def diferencia_dias(otra_fecha)
+    if @anio == otra_fecha.anio && @mes == otra_fecha.mes
+      return @dia - otra_fecha.dia
+    end
+    if @anio == otra_fecha.anio && @mes != otra_fecha.mes
+      return DIAS_POR_MES[@mes] - otra_fecha.dia + @dia
+    end
+    if @anio != otra_fecha.anio
+      dias = DIAS_POR_MES[@mes] - otra_fecha.dia + @dia
+      (otra_fecha.mes + 1...@mes).each do |mes|
+        dias += DIAS_POR_MES[mes]
+      end
+      dias += DIAS_POR_MES[otra_fecha.mes] - otra_fecha.dia
+      dias
+    end
+  end
+
   def ==(other)
     return nil unless other.is_a?(Fecha)
     [anio, mes, dia] == [other.anio, other.mes, other.dia]

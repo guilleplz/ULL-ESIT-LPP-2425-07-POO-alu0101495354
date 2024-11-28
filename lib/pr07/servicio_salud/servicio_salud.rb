@@ -22,4 +22,10 @@ class ServicioSalud
     "#{@codigo_identificacion} - #{@descripcion} - #{@horario_apertura} - #{@horario_cierre} - [#{@calendario_festivos.join(", ")}]"
   end
 
+  def duracion_ocupacion_cama(cama_id, fecha_ingreso, fecha_alta)
+    raise 'Cama no ocupada' unless @camas_estandar[cama_id]
+
+    (fecha_alta.diferencia_dias(fecha_ingreso))
+  end
+
 end
