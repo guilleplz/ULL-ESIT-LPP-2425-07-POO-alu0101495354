@@ -46,6 +46,13 @@ class ServicioSaludTest < Test::Unit::TestCase
     assert_equal [@medico, medico2], medicos
   end
 
+  def test_herencia
+    assert_equal true, @servicio.is_a?(Comparable)
+    assert_equal true, @servicio.is_a?(Enumerable)
+    assert_equal true, @servicio.is_a?(Object)
+    assert_equal true, @servicio.is_a?(BasicObject)
+  end
+
 
 
 end
