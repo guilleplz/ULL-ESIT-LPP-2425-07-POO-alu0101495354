@@ -15,6 +15,20 @@ class ServicioSalud
     @camas_estandar = {}
   end
 
+  # Asigna un médico a un paciente que ocupa una cama.
+  #
+  # @param id_cama [Integer] Identificador de la cama ocupada.
+  # @param medico [Medico] Médico a asignar al paciente.
+  # @return [String] Mensaje de confirmación o error.
+  def asignar_medico_a_paciente(id_cama, medico)
+    paciente = @camas_estandar[id_cama]
+    if paciente.nil?
+      raise 'Cama no ocupada'
+    else
+      medico.agregar_paciente(paciente)
+    end
+  end
+
   def asignar_paciente_a_cama(paciente, cama_id)
     raise 'Cama ocupada' if @camas_estandar[cama_id]
 
