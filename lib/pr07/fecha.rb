@@ -74,6 +74,9 @@ class Fecha
     }
   end
 
+  def to_s
+    format("%02d-%02d-%02d", @anio, @mes, @dia)
+  end
 
   def diferencia_anios(otra_fecha)
     years = @anio - otra_fecha.anio

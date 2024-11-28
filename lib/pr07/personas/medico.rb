@@ -50,5 +50,12 @@ class Medico < Persona
     @pacientes.each { |paciente| yield paciente }
   end
 
+  # Método para convertir el objeto a una cadena de texto.
+  #
+  # @return [String] una cadena de texto con los datos del médico.
+  def to_s
+    "#{super} - Especialidad: #{@especialidad}"
+  end
+
 
 end

@@ -39,6 +39,13 @@ class Paciente < Persona
     @diagnosticos << diagnostico
   end
 
+  # Método para convertir el objeto a una cadena de texto.
+  #
+  # @return [String] una cadena de texto con los datos del paciente.
+  def to_s
+    "#{super} - Prioridad: #{@prioridad}"
+  end
+
   # Devuelve el último diagnóstico asignado al paciente.
   #
   # @return [String, nil] El último diagnóstico o nil si no hay diagnósticos.

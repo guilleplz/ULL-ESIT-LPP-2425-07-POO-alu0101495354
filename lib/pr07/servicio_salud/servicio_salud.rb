@@ -12,4 +12,8 @@ class ServicioSalud
     @camas_estandar = {}
   end
 
+  def to_s
+    "#{@codigo_identificacion} - #{@descripcion} - #{@horario_apertura} - #{@horario_cierre} - [#{@calendario_festivos.join(", ")}]"
+  end
+
 end

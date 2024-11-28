@@ -82,6 +82,14 @@ class Hora
     @hora * 3600 + @minuto * 60 + @segundo
   end
 
+  # Método para convertir la hora a un string
+  #
+  # @return [String] La hora en formato HH:MM:SS
+  def to_s
+    format("%02d:%02d:%02d", @hora, @minuto, @segundo)
+  end
+  
+
 
 
 end
