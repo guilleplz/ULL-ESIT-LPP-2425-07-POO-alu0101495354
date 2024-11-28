@@ -17,7 +17,6 @@ class Paciente < Persona
   # @param fecha_nacimiento [Date] La fecha de nacimiento del paciente.
   # @param prioridad [Integer] La prioridad asignada al paciente.
   def initialize(id, nombre, apellido, sexo, fecha_nacimiento, prioridad)
-    # No llamamos a super aquí para evitar incrementar el contador dos veces
     super(id, nombre, apellido, sexo, fecha_nacimiento)  # Esto invoca el constructor de Persona
     @prioridad = prioridad
     @diagnosticos = []
