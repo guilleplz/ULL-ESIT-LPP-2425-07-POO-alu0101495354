@@ -61,6 +61,15 @@ class ServicioSaludTest < Test::Unit::TestCase
     assert_equal true, @servicio.is_a?(BasicObject)
   end
 
+  def test_numero_pacientes_asignados
+    @servicio.asignar_paciente_a_cama(@paciente, 1)
+    @servicio.asignar_medico_a_paciente(1, @medico)
+    assert_equal 1, @servicio.numero_pacientes_asignados
+    @servicio.asignar_paciente_a_cama(@paciente, 2)
+    @servicio.asignar_medico_a_paciente(2, @medico)
+    assert_equal 2, @servicio.numero_pacientes_asignados
+  end
+
 
 
 end
