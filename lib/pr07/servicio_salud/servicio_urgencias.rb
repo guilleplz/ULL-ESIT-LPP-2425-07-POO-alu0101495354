@@ -16,5 +16,7 @@ class ServicioUrgencias < ServicioSalud
     super + "Camas UCI disponibles: #{@camas_uci_disponibles}\n"
   end
 
-  
+  def numero_camas_libres
+    @camas_uci_disponibles + @camas_estandar.count
+  end
 end
