@@ -19,5 +19,9 @@ class ServicioSaludTest < Test::Unit::TestCase
     assert_equal({@paciente => Fecha.new(2020, 1, 1)}, @servicio.camas_estandar)
   end
 
-  
+  def test_to_s
+    assert_equal "1 - hospital - 08:00:00 - 20:00:30 - [2024-01-01, 2024-12-06]", @servicio.to_s
+  end
+
+
 end
