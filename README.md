@@ -1,9 +1,5 @@
 # Pr07
  
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 ## Clase NivelTriaje
 
 ### Descripción General
@@ -191,3 +187,54 @@ Método que devuelve un valor booleano indicando si el médico titular ha alcanz
 
 #### `to_s`
 Método que devuelve una representación en cadena de caracteres del objeto, que incluye el nombre completo del médico y su especialidad.
+
+## Clase ServicioSalud
+
+### Descripción
+
+La clase `ServicioSalud` representa un servicio de salud dentro del sistema sanitario. Gestiona los médicos, pacientes y otros servicios relacionados con la atención médica.
+
+### Atributos
+- **`@medicos`**: Una lista de médicos disponibles en el servicio.
+- **`@pacientes`**: Una lista de pacientes registrados en el servicio.
+- **`@nombre`**: Nombre del servicio de salud.
+
+### Métodos
+- **`initialize(nombre)`**: Constructor que inicializa el nombre del servicio de salud.
+- **`agregar_medico(medico)`**: Añade un médico al servicio de salud.
+- **`agregar_paciente(paciente)`**: Añade un paciente al servicio de salud.
+- **`obtener_medicos`**: Devuelve la lista de médicos asignados al servicio.
+- **`obtener_pacientes`**: Devuelve la lista de pacientes registrados en el servicio.
+- **`to_s`**: Método de conversión a cadena que representa el servicio de salud con su nombre y número de médicos y pacientes.
+
+## Clase ServicioUrgencias
+
+### Descripción
+
+La clase `ServicioUrgencias` es una subclase de `ServicioSalud` que maneja específicamente los casos de urgencias médicas. Está encargada de gestionar los pacientes con niveles de urgencia más altos, asignando médicos según su especialidad y número de pacientes.
+
+### Atributos
+- **`@pacientes_urgentes`**: Lista de pacientes con urgencia de atención médica.
+- **`@medicos_urgencias`**: Lista de médicos especializados en urgencias.
+
+### Métodos
+- **`initialize(nombre)`**: Constructor que inicializa el nombre del servicio de urgencias.
+- **`agregar_paciente_urgente(paciente)`**: Añade un paciente a la lista de urgencias, priorizando los casos más graves.
+- **`asignar_medico_a_urgencia(medico)`**: Asigna un médico especializado en urgencias a la lista de médicos de urgencias.
+- **`to_s`**: Método de conversión a cadena que representa el servicio de urgencias, incluyendo el nombre, médicos y pacientes.
+
+## Clase ServicioHospitalizacion
+
+### Descripción
+
+La clase `ServicioHospitalizacion` representa un servicio de hospitalización, que se encarga de gestionar a los pacientes que requieren una estancia prolongada en el hospital para recibir tratamiento.
+
+### Atributos
+- **`@pacientes_hospitalizados`**: Lista de pacientes hospitalizados.
+- **`@medicos_hospitalizacion`**: Lista de médicos asignados a los pacientes hospitalizados.
+
+### Métodos
+- **`initialize(nombre)`**: Constructor que inicializa el nombre del servicio de hospitalización.
+- **`agregar_paciente_hospitalizado(paciente)`**: Añade un paciente a la lista de hospitalizados.
+- **`asignar_medico_a_hospitalizacion(medico)`**: Asigna un médico a los pacientes hospitalizados.
+- **`to_s`**: Método de conversión a cadena que representa el servicio de hospitalización, incluyendo el nombre, médicos y pacientes hospitalizados.
