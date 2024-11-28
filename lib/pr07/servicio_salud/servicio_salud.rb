@@ -29,6 +29,13 @@ class ServicioSalud
     end
   end
 
+  # Calcula el número total de pacientes asignados a los médicos del servicio.
+  #
+  # @return [Integer] Número total de pacientes.
+  def numero_pacientes_asignados
+    @medicos.sum { |medico| medico.numero_pacientes }
+  end
+
   def asignar_paciente_a_cama(paciente, cama_id)
     raise 'Cama ocupada' if @camas_estandar[cama_id]
 
