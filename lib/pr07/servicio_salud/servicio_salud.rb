@@ -12,6 +12,12 @@ class ServicioSalud
     @camas_estandar = {}
   end
 
+  def asignar_paciente_a_cama(paciente, cama_id)
+    raise 'Cama ocupada' if @camas_estandar[cama_id]
+
+    @camas_estandar[cama_id] = paciente
+  end
+
   def to_s
     "#{@codigo_identificacion} - #{@descripcion} - #{@horario_apertura} - #{@horario_cierre} - [#{@calendario_festivos.join(", ")}]"
   end

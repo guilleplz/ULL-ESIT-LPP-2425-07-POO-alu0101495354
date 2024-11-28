@@ -84,6 +84,11 @@ class Fecha
     years
   end
 
+  def ==(other)
+    return nil unless other.is_a?(Fecha)
+    [anio, mes, dia] == [other.anio, other.mes, other.dia]
+  end
+
   def <=>(other)
     [anio, mes, dia] <=> [other.anio, other.mes, other.dia]
   end
