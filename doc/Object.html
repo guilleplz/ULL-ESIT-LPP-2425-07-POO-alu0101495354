@@ -75,6 +75,8 @@
 
   <ul class="link-list" role="directory">
     
+    <li ><a href="#method-i-fusionar_servicios">#fusionar_servicios</a>
+    
     <li ><a href="#method-i-incrementar_contador">#incrementar_contador</a>
     
     <li ><a href="#method-i-nivel_prioridad">#nivel_prioridad</a>
@@ -170,6 +172,84 @@
        <header>
          <h3>Public Instance Methods</h3>
        </header>
+
+    
+      <div id="method-i-fusionar_servicios" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fusionar_servicios</span><span
+            class="method-args">(servicio1, servicio2)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fusiona dos servicios de salud y devuelve un nuevo servicio combinado.</p>
+
+<p>Esta función toma dos servicios del mismo tipo y los fusiona en un nuevo servicio. Los atributos como el código de identificación, descripción, horarios de apertura y cierre, calendario de festivos, médicos y camas estándar son combinados. Si los servicios son de tipo “ServicioUrgencias”, también se combinan las camas UCI disponibles.</p>
+
+<p>@param servicio1 [ServicioSalud] El primer servicio a fusionar. @param servicio2 [ServicioSalud] El segundo servicio a fusionar. @return [ServicioSalud] Un nuevo servicio que representa la fusión de ambos servicios de entrada. @raise [ArgumentError] Si los dos servicios no son del mismo tipo. @raise [ArgumentError] Si alguno de los servicios no es una instancia de <a href="ServicioSalud.html"><code>ServicioSalud</code></a> o <a href="ServicioUrgencias.html"><code>ServicioUrgencias</code></a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fusionar_servicios-source">
+            <pre><span class="ruby-comment"># File lib/pr07/servicio_salud/functions.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fusionar_servicios</span>(<span class="ruby-identifier">servicio1</span>, <span class="ruby-identifier">servicio2</span>)
+  <span class="ruby-comment"># Verifica que los servicios sean del mismo tipo</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Ambos servicios deben ser del mismo tipo&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">servicio2</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-comment"># Verifica que ambos servicios sean instancias de ServicioSalud o derivados</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Ambos deben ser servicios&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">ServicioSalud</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">ServicioSalud</span>)
+
+  <span class="ruby-comment"># Fusiona los atributos comunes entre los dos servicios.</span>
+  <span class="ruby-identifier">nuevo_codigo</span> = <span class="ruby-node">&quot;#{servicio1.codigo_identificacion}-#{servicio2.codigo_identificacion}&quot;</span>
+  <span class="ruby-identifier">nueva_descripcion</span> = <span class="ruby-node">&quot;#{servicio1.descripcion} &amp; #{servicio2.descripcion}&quot;</span>
+  <span class="ruby-identifier">nuevo_horario_apertura</span> = [<span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">horario_apertura</span>, <span class="ruby-identifier">servicio2</span>.<span class="ruby-identifier">horario_apertura</span>].<span class="ruby-identifier">min</span>
+  <span class="ruby-identifier">nuevo_horario_cierre</span> = [<span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">horario_cierre</span>, <span class="ruby-identifier">servicio2</span>.<span class="ruby-identifier">horario_cierre</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-identifier">nuevo_calendario_festivos</span> = (<span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">calendario_festivos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">servicio2</span>.<span class="ruby-identifier">calendario_festivos</span>).<span class="ruby-identifier">uniq</span>
+  <span class="ruby-identifier">nuevos_medicos</span> = (<span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">medicos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">servicio2</span>.<span class="ruby-identifier">medicos</span>).<span class="ruby-identifier">uniq</span>
+  <span class="ruby-identifier">nuevas_camas_estandar</span> = <span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">camas_estandar</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">servicio2</span>.<span class="ruby-identifier">camas_estandar</span>)
+
+  <span class="ruby-comment"># Crea el nuevo servicio basado en el tipo específico de los servicios</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ServicioUrgencias</span>)
+    <span class="ruby-comment"># Si los servicios son de tipo ServicioUrgencias, fusiona también las camas UCI</span>
+    <span class="ruby-identifier">nuevas_camas_uci</span> = <span class="ruby-identifier">servicio1</span>.<span class="ruby-identifier">camas_uci_disponibles</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">servicio2</span>.<span class="ruby-identifier">camas_uci_disponibles</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">ServicioUrgencias</span>.<span class="ruby-identifier">new</span>(
+      <span class="ruby-identifier">nuevo_codigo</span>,
+      <span class="ruby-identifier">nueva_descripcion</span>,
+      <span class="ruby-identifier">nuevo_horario_apertura</span>,
+      <span class="ruby-identifier">nuevo_horario_cierre</span>,
+      <span class="ruby-identifier">nuevo_calendario_festivos</span>,
+      <span class="ruby-identifier">nuevas_camas_uci</span>
+    ).<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">nuevo_servicio</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">nuevo_servicio</span>.<span class="ruby-identifier">medicos</span> = <span class="ruby-identifier">nuevos_medicos</span>
+      <span class="ruby-identifier">nuevo_servicio</span>.<span class="ruby-identifier">camas_estandar</span> = <span class="ruby-identifier">nuevas_camas_estandar</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># Si los servicios no son de tipo ServicioUrgencias, crea un nuevo ServicioSalud</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">ServicioSalud</span>.<span class="ruby-identifier">new</span>(
+      <span class="ruby-identifier">nuevo_codigo</span>,
+      <span class="ruby-identifier">nueva_descripcion</span>,
+      <span class="ruby-identifier">nuevo_horario_apertura</span>,
+      <span class="ruby-identifier">nuevo_horario_cierre</span>,
+      <span class="ruby-identifier">nuevo_calendario_festivos</span>
+    ).<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">nuevo_servicio</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">nuevo_servicio</span>.<span class="ruby-identifier">medicos</span> = <span class="ruby-identifier">nuevos_medicos</span>
+      <span class="ruby-identifier">nuevo_servicio</span>.<span class="ruby-identifier">camas_estandar</span> = <span class="ruby-identifier">nuevas_camas_estandar</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
 
     
       <div id="method-i-incrementar_contador" class="method-detail ">

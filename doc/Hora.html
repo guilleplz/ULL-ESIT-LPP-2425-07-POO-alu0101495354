@@ -100,6 +100,8 @@
     
     <li ><a href="#method-i-each">#each</a>
     
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
     <li ><a href="#method-i-total_segundos">#total_segundos</a>
     
   </ul>
@@ -115,7 +117,11 @@
 
   <section class="description">
     
-<p>Clase <a href="Hora.html"><code>Hora</code></a> que representa una hora del día (hora, minuto, segundo)</p>
+<p>Clase <a href="Hora.html"><code>Hora</code></a> que representa una hora del día (hora, minuto, segundo).</p>
+
+<p>Esta clase permite representar horas específicas del día y realizar operaciones como calcular la diferencia entre dos horas, convertir una hora a cadena, y comparar instancias de la clase <a href="Hora.html"><code>Hora</code></a>.</p>
+
+<p>La clase incluye funcionalidades como la comparación de horas, el cálculo de la diferencia en tiempo y la conversión a segundos totales.</p>
 
   </section>
 
@@ -142,7 +148,7 @@
 
         <div class="method-description">
         
-        <p>Accesores solo de lectura para hora, minuto y segundo @return [Integer] la hora, minuto o segundo</p>
+        <p>Accesores solo de lectura para hora, minuto y segundo @return [Integer] la hora, minuto o segundo de la hora</p>
         
         </div>
       </div>
@@ -155,7 +161,7 @@
 
         <div class="method-description">
         
-        <p>Accesores solo de lectura para hora, minuto y segundo @return [Integer] la hora, minuto o segundo</p>
+        <p>Accesores solo de lectura para hora, minuto y segundo @return [Integer] la hora, minuto o segundo de la hora</p>
         
         </div>
       </div>
@@ -168,7 +174,7 @@
 
         <div class="method-description">
         
-        <p>Accesores solo de lectura para hora, minuto y segundo @return [Integer] la hora, minuto o segundo</p>
+        <p>Accesores solo de lectura para hora, minuto y segundo @return [Integer] la hora, minuto o segundo de la hora</p>
         
         </div>
       </div>
@@ -196,15 +202,15 @@
 
         <div class="method-description">
           
-          <p>Constructor para inicializar un objeto de la clase <a href="Hora.html"><code>Hora</code></a></p>
+          <p>Constructor para inicializar un objeto de la clase <a href="Hora.html"><code>Hora</code></a>.</p>
 
-<p>@param hora [Integer] La hora del día (debe estar entre 0 y 23) @param minuto [Integer] Los minutos del día (debe estar entre 0 y 59) @param segundo [Integer] Los segundos del día (debe estar entre 0 y 59) @raise [ArgumentError] Si la hora, los minutos o los segundos están fuera de rango</p>
+<p>@param hora [Integer] La hora del día (debe estar entre 0 y 23). @param minuto [Integer] Los minutos del día (debe estar entre 0 y 59). @param segundo [Integer] Los segundos del día (debe estar entre 0 y 59). @raise [ArgumentError] Si la hora, los minutos o los segundos están fuera de rango.</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">hora</span>, <span class="ruby-identifier">minuto</span>, <span class="ruby-identifier">segundo</span>)
   <span class="ruby-comment"># Validar que la hora esté entre 0 y 23</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;La hora debe estar entre 0 y 23&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">hora</span>.<span class="ruby-identifier">between?</span>(<span class="ruby-value">0</span>, <span class="ruby-value">23</span>)
@@ -251,13 +257,17 @@
 
         <div class="method-description">
           
-          
+          <p>Compara dos instancias de la clase <a href="Hora.html"><code>Hora</code></a>.</p>
+
+<p>Este método implementa la interfaz de comparación en Ruby. Compara las horas, minutos y segundos en orden, retornando un valor negativo, cero o positivo según la comparación.</p>
+
+<p>@param other [Hora] El otro objeto de tipo <a href="Hora.html"><code>Hora</code></a> para comparar. @return [Integer] -1 si la hora actual es menor, 0 si son iguales, 1 si la hora actual es mayor.</p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 69</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 83</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
   [<span class="ruby-ivar">@hora</span>, <span class="ruby-ivar">@minuto</span>, <span class="ruby-ivar">@segundo</span>] <span class="ruby-operator">&lt;=&gt;</span> [<span class="ruby-identifier">other</span>.<span class="ruby-identifier">hora</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">minuto</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">segundo</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -284,11 +294,11 @@
 
         <div class="method-description">
           
-          <p>Método para calcular la diferencia en horas, minutos y segundos entre dos objetos <a href="Hora.html"><code>Hora</code></a></p>
+          <p>Método para calcular la diferencia en horas, minutos y segundos entre dos objetos <a href="Hora.html"><code>Hora</code></a>.</p>
 
 <p>Este método compara la hora actual del objeto con la hora proporcionada en otro objeto `Hora` y devuelve la diferencia en horas, minutos y segundos.</p>
 
-<p>@param otra_hora [Hora] Otro objeto de tipo <a href="Hora.html"><code>Hora</code></a> con el que comparar @return [Hash] La diferencia en horas, minutos y segundos entre las dos horas @example</p>
+<p>@param otra_hora [Hora] Otro objeto de tipo <a href="Hora.html"><code>Hora</code></a> con el que comparar. @return [Hash] La diferencia en horas, minutos y segundos entre las dos horas. @example</p>
 
 <pre class="ruby"><span class="ruby-identifier">hora1</span> = <span class="ruby-constant">Hora</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">10</span>, <span class="ruby-value">30</span>, <span class="ruby-value">15</span>)
 <span class="ruby-identifier">hora2</span> = <span class="ruby-constant">Hora</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">12</span>, <span class="ruby-value">45</span>, <span class="ruby-value">20</span>)
@@ -300,7 +310,7 @@
 
           
           <div class="method-source-code" id="diferencia_en_tiempo-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 43</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diferencia_en_tiempo</span>(<span class="ruby-identifier">otra_hora</span>)
   <span class="ruby-comment"># Calcular la diferencia en horas, minutos y segundos</span>
   <span class="ruby-identifier">hora_diff</span> = <span class="ruby-identifier">otra_hora</span>.<span class="ruby-identifier">hora</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@hora</span>
@@ -349,13 +359,17 @@
 
         <div class="method-description">
           
-          
+          <p>Calcula la diferencia en segundos entre dos horas.</p>
+
+<p>Este método calcula la diferencia absoluta en segundos entre la hora actual y otra hora proporcionada.</p>
+
+<p>@param otra_hora [Hora] Otra instancia de la clase <a href="Hora.html"><code>Hora</code></a> para comparar. @return [Integer] La diferencia en segundos entre las dos horas.</p>
           
           
 
           
           <div class="method-source-code" id="diferencia_segundos-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 77</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diferencia_segundos</span>(<span class="ruby-identifier">otra_hora</span>)
   (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">total_segundos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">otra_hora</span>.<span class="ruby-identifier">total_segundos</span>).<span class="ruby-identifier">abs</span>
 <span class="ruby-keyword">end</span></pre>
@@ -382,15 +396,52 @@
 
         <div class="method-description">
           
-          
+          <p>Itera sobre los componentes de la hora (hora, minuto, segundo) y los pasa a un bloque.</p>
+
+<p>@yield [hora, minuto, segundo] Cada uno de los componentes de la hora.</p>
           
           
 
           
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 73</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
   [<span class="ruby-ivar">@hora</span>, <span class="ruby-ivar">@minuto</span>, <span class="ruby-ivar">@segundo</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">componente</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">componente</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método para convertir la hora a un string en formato HH:MM:SS.</p>
+
+<p>@return [String] La hora representada como una cadena en el formato “HH:MM:SS”.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-identifier">format</span>(<span class="ruby-string">&quot;%02d:%02d:%02d&quot;</span>, <span class="ruby-ivar">@hora</span>, <span class="ruby-ivar">@minuto</span>, <span class="ruby-ivar">@segundo</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -415,13 +466,17 @@
 
         <div class="method-description">
           
-          
+          <p>Calcula el total de segundos desde las 00:00:00.</p>
+
+<p>Este método convierte la hora, los minutos y los segundos en un valor total de segundos.</p>
+
+<p>@return [Integer] El total de segundos desde las 00:00:00.</p>
           
           
 
           
           <div class="method-source-code" id="total_segundos-source">
-            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 81</span>
+            <pre><span class="ruby-comment"># File lib/pr07/hora.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">total_segundos</span>
   <span class="ruby-ivar">@hora</span> <span class="ruby-operator">*</span> <span class="ruby-value">3600</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@minuto</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@segundo</span>
 <span class="ruby-keyword">end</span></pre>

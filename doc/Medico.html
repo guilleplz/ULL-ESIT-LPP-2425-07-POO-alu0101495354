@@ -102,6 +102,8 @@
     
     <li ><a href="#method-i-numero_pacientes">#numero_pacientes</a>
     
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
   </ul>
 </div>
 
@@ -380,6 +382,41 @@
             <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">numero_pacientes</span>
   <span class="ruby-ivar">@pacientes</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método para convertir el objeto a una cadena de texto.</p>
+
+<p>@return [String] una cadena de texto con los datos del médico.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/pr07/personas/medico.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-node">&quot;#{super} - Especialidad: #{@especialidad}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

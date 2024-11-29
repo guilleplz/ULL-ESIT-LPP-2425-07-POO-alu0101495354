@@ -98,6 +98,8 @@
     
     <li ><a href="#method-i-nivel_prioridad">#nivel_prioridad</a>
     
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
   </ul>
 </div>
 
@@ -303,6 +305,41 @@
   <span class="ruby-keyword">when</span> <span class="ruby-value">5</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">NO_URGENTE</span>        <span class="ruby-comment"># Nivel 5: No urgente</span>
   <span class="ruby-keyword">else</span> <span class="ruby-constant">DESCONOCIDO</span>              <span class="ruby-comment"># En caso de que el nivel no sea válido, devuelve &quot;Desconocido&quot;</span>
   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método para convertir el objeto a una cadena de texto</p>
+
+<p>@return [String] una cadena de texto con el nivel de triaje</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/pr07/nivel_triaje.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-node">&quot;Nivel de triaje: #{@nivel}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
