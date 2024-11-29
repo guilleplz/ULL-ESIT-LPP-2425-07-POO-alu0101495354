@@ -50,5 +50,12 @@ class NivelTriaje
     yield @nivel
   end
 
+  # Método para convertir el objeto a una cadena de texto
+  #
+  # @return [String] una cadena de texto con el nivel de triaje
+  def to_s
+    "Nivel de triaje: #{@nivel}"
+  end
+
 
 end

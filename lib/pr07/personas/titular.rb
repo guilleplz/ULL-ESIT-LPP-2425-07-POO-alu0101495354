@@ -39,4 +39,11 @@ class Titular < Medico
     @pacientes.each(&block)
   end
 
+  # Método para convertir el objeto a una cadena de texto.
+  #
+  # @return [String] una cadena de texto con los datos del titular.
+  def to_s
+    "#{super} - Máximo de pacientes: #{@max_pacientes}"
+  end
+
 end

@@ -17,7 +17,6 @@ class Paciente < Persona
   # @param fecha_nacimiento [Date] La fecha de nacimiento del paciente.
   # @param prioridad [Integer] La prioridad asignada al paciente.
   def initialize(id, nombre, apellido, sexo, fecha_nacimiento, prioridad)
-    # No llamamos a super aquí para evitar incrementar el contador dos veces
     super(id, nombre, apellido, sexo, fecha_nacimiento)  # Esto invoca el constructor de Persona
     @prioridad = prioridad
     @diagnosticos = []
@@ -37,6 +36,13 @@ class Paciente < Persona
   # @param diagnostico [String] El diagnóstico que se añadirá a la lista.
   def agregar_diagnostico(diagnostico)
     @diagnosticos << diagnostico
+  end
+
+  # Método para convertir el objeto a una cadena de texto.
+  #
+  # @return [String] una cadena de texto con los datos del paciente.
+  def to_s
+    "#{super} - Prioridad: #{@prioridad}"
   end
 
   # Devuelve el último diagnóstico asignado al paciente.
