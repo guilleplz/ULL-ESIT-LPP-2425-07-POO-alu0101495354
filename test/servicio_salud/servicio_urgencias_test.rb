@@ -25,4 +25,10 @@ class ServicioUrgenciasTest < Test::Unit::TestCase
   def test_numero_camas_libres
     assert_equal 11, @servicio.numero_camas_libres
   end
+
+  def test_polimorfismo
+    assert_equal true, @servicio.respond_to?(:asignar_paciente_a_cama)
+    assert_equal true, @servicio.respond_to?(:numero_pacientes_asignados)
+    assert_equal true, @servicio.respond_to?(:duracion_ocupacion_cama)
+  end
 end

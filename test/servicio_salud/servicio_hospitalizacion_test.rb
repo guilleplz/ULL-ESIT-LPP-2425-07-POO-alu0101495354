@@ -31,4 +31,10 @@ class ServicioHospitalizacionTest < Test::Unit::TestCase
     assert_equal true, @servicio.is_a?(Object)
     assert_equal true, @servicio.is_a?(BasicObject)
   end
+
+  def test_polimorfismo
+    assert_equal true, @servicio.respond_to?(:asignar_paciente_a_cama)
+    assert_equal true, @servicio.respond_to?(:numero_pacientes_asignados)
+    assert_equal true, @servicio.respond_to?(:duracion_ocupacion_cama)
+  end
 end
