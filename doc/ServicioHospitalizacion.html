@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class ServicioHospitalizacion - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ServicioSalud.html">ServicioSalud</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-numero_camas_libres">#numero_camas_libres</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-ServicioHospitalizacion">
+  <h1 id="class-ServicioHospitalizacion" class="class">
+    class ServicioHospitalizacion
+  </h1>
+
+  <section class="description">
+    
+<p>Clase que representa un servicio de hospitalización, derivado de <a href="ServicioSalud.html"><code>ServicioSalud</code></a>.</p>
+
+<p>Esta clase extiende de `ServicioSalud` y añade funcionalidad específica para los servicios de hospitalización, incluyendo el número de plantas disponibles y un método para calcular las camas libres en el servicio de hospitalización.</p>
+
+<p>@see <a href="ServicioSalud.html"><code>ServicioSalud</code></a></p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-numero_plantas" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">numero_plantas</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Atributo que indica el número de plantas en el servicio de hospitalización. @return [Integer] El número de plantas del hospital.</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, numero_plantas)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inicializa una nueva instancia de <a href="ServicioHospitalizacion.html"><code>ServicioHospitalizacion</code></a>.</p>
+
+<p>@param codigo_identificacion [String] El código único de identificación del servicio. @param descripcion [String] Descripción del servicio de hospitalización. @param horario_apertura [String] El horario de apertura del servicio. @param horario_cierre [String] El horario de cierre del servicio. @param calendario_festivos [Array&lt;String&gt;] Lista de fechas de festivos para el servicio. @param <a href="ServicioHospitalizacion.html#attribute-i-numero_plantas"><code>numero_plantas</code></a> [Integer] El número de plantas del servicio de hospitalización.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="ServicioSalud.html#method-c-new"><code>ServicioSalud::new</code></a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/pr07/servicio_salud/servicio_hospitalizacion.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">codigo_identificacion</span>, <span class="ruby-identifier">descripcion</span>, <span class="ruby-identifier">horario_apertura</span>, <span class="ruby-identifier">horario_cierre</span>, <span class="ruby-identifier">calendario_festivos</span>, <span class="ruby-identifier">numero_plantas</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">codigo_identificacion</span>, <span class="ruby-identifier">descripcion</span>, <span class="ruby-identifier">horario_apertura</span>, <span class="ruby-identifier">horario_cierre</span>, <span class="ruby-identifier">calendario_festivos</span>)
+  <span class="ruby-ivar">@numero_plantas</span> = <span class="ruby-identifier">numero_plantas</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-numero_camas_libres" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">numero_camas_libres</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve el número de camas libres en el servicio de hospitalización.</p>
+
+<p>Este método cuenta cuántas camas estándar están disponibles (es decir, aquellas que tienen valor `nil`).</p>
+
+<p>@return [Integer] El número de camas libres en el servicio.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="numero_camas_libres-source">
+            <pre><span class="ruby-comment"># File lib/pr07/servicio_salud/servicio_hospitalizacion.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">numero_camas_libres</span>
+  <span class="ruby-ivar">@camas_estandar</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">count</span>(<span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
