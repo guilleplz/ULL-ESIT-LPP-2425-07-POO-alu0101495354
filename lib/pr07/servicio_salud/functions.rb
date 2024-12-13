@@ -101,3 +101,14 @@ def calcular_indice_respuesta(servicio)
 end
 
 
+# Permite seleccionar el servicio con mejor índice de capacidad de respuesta.
+#
+# @param servicios [Array<ServicioSalud>] Un arreglo de servicios de salud.
+# @return [ServicioSalud] El servicio con el mejor índice de capacidad de respuesta.
+def seleccionar_servicio_con_mejor_indice(servicios)
+  # Calcula el índice de capacidad de respuesta para cada servicio
+  indices = servicios.map { |servicio| [servicio, calcular_indice_respuesta(servicio)] }
+
+  # Selecciona el servicio con el mayor índice de capacidad de respuesta
+  indices.max_by { |servicio, indice| indice }.first
+end
