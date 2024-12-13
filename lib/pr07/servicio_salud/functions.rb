@@ -1,5 +1,6 @@
 require_relative 'servicio_salud'
 require_relative 'servicio_urgencias'
+require_relative '../constants'
 
 # Fusiona dos servicios de salud y devuelve un nuevo servicio combinado.
 #
@@ -26,7 +27,10 @@ def fusionar_servicios(servicio1, servicio2)
   nuevo_horario_cierre = [servicio1.horario_cierre, servicio2.horario_cierre].max
   nuevo_calendario_festivos = (servicio1.calendario_festivos + servicio2.calendario_festivos).uniq
   nuevos_medicos = (servicio1.medicos + servicio2.medicos).uniq
-  nuevas_camas_estandar = servicio1.camas_estandar.merge(servicio2.camas_estandar)
+  nuevas_camas_estandar = servicio1.camas_estandar.merge(servicio2.camas_estandar) do |cama_id, cama1, cama2|
+    # Resolver conflictos: preferir la cama ocupada, o combinar datos según necesidad
+    cama1[:paciente] ? cama1 : cama2
+  end
 
   # Crea el nuevo servicio basado en el tipo específico de los servicios
   if servicio1.is_a?(ServicioUrgencias)
@@ -38,6 +42,7 @@ def fusionar_servicios(servicio1, servicio2)
       nuevo_horario_apertura,
       nuevo_horario_cierre,
       nuevo_calendario_festivos,
+      nuevas_camas_estandar.size,
       nuevas_camas_uci
     ).tap do |nuevo_servicio|
       nuevo_servicio.medicos = nuevos_medicos
@@ -57,3 +62,42 @@ def fusionar_servicios(servicio1, servicio2)
     end
   end
 end
+
+
+# Calcula el índice de capacidad de respuesta de un servicio de salud.
+#
+# Esta función calcula el índice de capacidad de respuesta de un servicio de salud
+# basado en el tiempo de ocupación promedio de las camas y el ratio de facultativos por paciente.
+# El índice de capacidad de respuesta se clasifica en tres niveles: ACEPTABLE, BUENO y EXCELENTE.
+#
+# @param servicio [ServicioSalud] El servicio de salud para el que se calculará el índice de capacidad de respuesta.
+# @return [Integer] El índice de capacidad de respuesta del servicio.
+def calcular_indice_respuesta(servicio)
+  # Verifica que haya camas y médicos para evitar divisiones por cero
+  return nil if servicio.camas_estandar.empty? || servicio.medicos.empty?
+
+  camas = servicio.camas_estandar.select { |_, cama| !cama[:paciente].nil? }
+
+  # Calcula el tiempo de ocupación promedio (solo para camas ocupadas)
+  tiempos_ocupacion = camas.values.map do |cama|
+    dias = cama[:fecha_alta].diferencia_dias(cama[:fecha_ingreso])
+    dias * 24 * 60 + cama[:hora_alta].diferencia_minutos(cama[:hora_ingreso])
+  end.compact
+
+  tiempo_ocupacion_promedio = tiempos_ocupacion.sum / tiempos_ocupacion.size.to_f
+
+  # Calcula el ratio de facultativos por paciente
+  pacientes_totales = camas.values.count { |cama| cama[:paciente] }
+  ratio_facultativos = pacientes_totales.zero? ? Float::INFINITY : servicio.medicos.length.to_f / pacientes_totales
+
+  # Determina el índice de capacidad de respuesta
+  if tiempo_ocupacion_promedio >= 30.0 && ratio_facultativos >= 1.0 / 3.0
+    ACEPTABLE
+  elsif tiempo_ocupacion_promedio <= 15.0 && ratio_facultativos >= 1.0 / 1.0
+    EXCELENTE
+  else
+    BUENO
+  end
+end
+
+
