@@ -91,5 +91,9 @@ class Functions_test < Test::Unit::TestCase
     assert_equal BUENO, calcular_indice_respuesta(@servicio3)
   end
 
+  def test_seleccionar_servicio_con_mejor_indice
+    assert_equal @servicio2, seleccionar_servicio_con_mejor_indice([@servicio1, @servicio2, @servicio3])
+  end
+
 
 end
