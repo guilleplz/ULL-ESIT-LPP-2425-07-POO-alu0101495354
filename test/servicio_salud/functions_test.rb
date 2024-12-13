@@ -104,5 +104,8 @@ class Functions_test < Test::Unit::TestCase
     assert_equal [90.0, 70.0, 80.0], calcular_porcentaje_camas_libres([@serviciouci1, @serviciouci2, @serviciouci3])
   end
 
-
+  def test_calcular_porcentaje_facultativos
+    assert_equal [[["Cardiología", 100.0]], [["Pediatría", 50.0], ["Medicina Interna", 50.0]], [["Medicina Interna", 100.0]]], calcular_porcentaje_facultativos([@servicio1, @servicio2, @servicio3])
+    assert_equal [[["Cardiología", 100.0]], [["Cardiología", 50.0], ["Medicina Interna", 50.0]], [["Medicina Interna", 100.0]]], calcular_porcentaje_facultativos([@serviciouci1, @serviciouci2, @serviciouci3])
+  end
 end
