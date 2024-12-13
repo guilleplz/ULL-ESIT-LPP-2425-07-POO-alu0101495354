@@ -138,3 +138,12 @@ def calcular_porcentaje_camas_libres(servicios)
     porcentaje_camas_libres
   end
 end
+
+def calcular_porcentaje_facultativos(servicios)
+  servicios.map do |servicio|
+    medicos_por_especialidad = servicio.medicos.group_by(&:especialidad)
+    total_medicos = servicio.medicos.size
+    porcentajes = medicos_por_especialidad.transform_values { |medicos| 100 * medicos.size / total_medicos.to_f }
+    porcentajes.map { |especialidad, porcentaje| [especialidad, porcentaje] }
+  end
+end
