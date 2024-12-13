@@ -20,8 +20,8 @@ class ServicioHospitalizacion < ServicioSalud
   # @param horario_cierre [String] El horario de cierre del servicio.
   # @param calendario_festivos [Array<String>] Lista de fechas de festivos para el servicio.
   # @param numero_plantas [Integer] El número de plantas del servicio de hospitalización.
-  def initialize(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, numero_plantas)
-    super(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos)
+  def initialize(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, numero_camas, numero_plantas)
+    super(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, numero_camas)
     @numero_plantas = numero_plantas
   end
 
@@ -31,6 +31,6 @@ class ServicioHospitalizacion < ServicioSalud
   #
   # @return [Integer] El número de camas libres en el servicio.
   def numero_camas_libres
-    @camas_estandar.values.count(nil)
+    @camas_estandar.count { |_, detalles| detalles.nil? || detalles[:paciente].nil? }
   end
 end

@@ -23,9 +23,9 @@ class ServicioUrgencias < ServicioSalud
   # @param horario_cierre [String] El horario de cierre del servicio de urgencias.
   # @param calendario_festivos [Array<String>] Lista de fechas de festivos para el servicio.
   # @param camas_uci_disponibles [Integer] Número de camas UCI disponibles en el servicio de urgencias.
-  def initialize(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, camas_uci_disponibles)
+  def initialize(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, numero_camas, camas_uci_disponibles)
     # Llama al constructor de la clase base
-    super(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos)
+    super(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, numero_camas)
     # Atributo específico de ServicioUrgencias
     @camas_uci_disponibles = camas_uci_disponibles
   end
@@ -47,6 +47,6 @@ class ServicioUrgencias < ServicioSalud
   #
   # @return [Integer] Número total de camas libres en el servicio de urgencias.
   def numero_camas_libres
-    @camas_uci_disponibles + @camas_estandar.values.count(nil)
+    @camas_uci_disponibles + @camas_estandar.count { |_, detalles| detalles.nil? || detalles[:paciente].nil? }
   end
 end

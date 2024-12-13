@@ -4,11 +4,11 @@ class ServicioUrgenciasTest < Test::Unit::TestCase
 
   def setup
 
-    @servicio = ServicioUrgencias.new(1, "hospital", Hora.new(8, 0, 0), Hora.new(20, 0, 30), [Fecha.new(2024, 1, 1), Fecha.new(2024, 12, 6)], 10)
+    @servicio = ServicioUrgencias.new(1, "hospital", Hora.new(8, 0, 0), Hora.new(20, 0, 30), [Fecha.new(2024, 1, 1), Fecha.new(2024, 12, 6)], 1, 10)
     @paciente = Paciente.new(1, "Juan", "García", "Hombre", Fecha.new(1980, 1, 1), 1)
     @medico = Medico.new(1, "Pedro", "López", "Hombre", Fecha.new(1970, 1, 1), "12345678A")
     @servicio.medicos << @medico
-    @servicio.asignar_paciente_a_cama(nil, 1)
+    @servicio.asignar_paciente_a_cama(nil, 1, Fecha.new(2020, 1, 1), Hora.new(8, 0, 0), Fecha.new(2020, 1, 2), Hora.new(8, 0, 0))
 
   end
 

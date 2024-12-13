@@ -101,6 +101,10 @@ class Hora
     (self.total_segundos - otra_hora.total_segundos).abs
   end
 
+  def diferencia_minutos(otra_hora)
+    (self.total_segundos - otra_hora.total_segundos).abs / 60
+  end
+
   # Calcula el total de segundos desde las 00:00:00.
   #
   # Este método convierte la hora, los minutos y los segundos en un valor total de segundos.

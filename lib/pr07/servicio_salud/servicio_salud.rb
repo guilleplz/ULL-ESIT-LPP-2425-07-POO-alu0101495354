@@ -28,7 +28,7 @@ class ServicioSalud
   # @param horario_apertura [String] El horario de apertura del servicio.
   # @param horario_cierre [String] El horario de cierre del servicio.
   # @param calendario_festivos [Array<String>] Lista de fechas de festivos para el servicio.
-  def initialize(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos)
+  def initialize(codigo_identificacion, descripcion, horario_apertura, horario_cierre, calendario_festivos, numero_camas)
     @codigo_identificacion = codigo_identificacion
     @descripcion = descripcion
     @horario_apertura = horario_apertura
@@ -36,6 +36,9 @@ class ServicioSalud
     @calendario_festivos = calendario_festivos
     @medicos = []
     @camas_estandar = {}
+    for i in 1..numero_camas
+      @camas_estandar[i] = {persona: nil, fecha_ingreso: nil, hora_ingreso: nil, fecha_alta: nil, hora_alta: nil}
+    end
   end
 
   # Asigna un médico a un paciente que ocupa una cama.
@@ -48,7 +51,11 @@ class ServicioSalud
   # @return [String] Mensaje de confirmación o error.
   # @raise [RuntimeError] Si la cama no está ocupada.
   def asignar_medico_a_paciente(id_cama, medico)
-    paciente = @camas_estandar[id_cama]
+    cama = @camas_estandar[id_cama]
+    if cama.nil?
+      raise 'Cama no ocupada'
+    end
+    paciente = @camas_estandar[id_cama][:paciente]
     if paciente.nil?
       raise 'Cama no ocupada'
     else
@@ -75,10 +82,10 @@ class ServicioSalud
   # @param cama_id [Integer] El identificador de la cama a la que se asigna el paciente.
   # @return [String] Mensaje de confirmación.
   # @raise [RuntimeError] Si la cama ya está ocupada.
-  def asignar_paciente_a_cama(paciente, cama_id)
-    raise 'Cama ocupada' if @camas_estandar[cama_id]
+  def asignar_paciente_a_cama(paciente, cama_id, fecha_ingreso, hora_ingreso, fecha_alta, hora_alta)
+    raise 'Cama ocupada' if @camas_estandar[cama_id][:paciente]
 
-    @camas_estandar[cama_id] = paciente
+    @camas_estandar[cama_id] = { paciente: paciente, fecha_ingreso: fecha_ingreso, hora_ingreso: hora_ingreso, fecha_alta: fecha_alta, hora_alta: hora_alta }
   end
 
   # Devuelve una representación en forma de cadena del servicio de salud.
@@ -98,10 +105,10 @@ class ServicioSalud
   # @param fecha_alta [Date] La fecha de alta del paciente.
   # @return [Integer] El número de días que el paciente ha ocupado la cama.
   # @raise [RuntimeError] Si la cama no está ocupada.
-  def duracion_ocupacion_cama(cama_id, fecha_ingreso, fecha_alta)
+  def duracion_ocupacion_cama(cama_id)
     raise 'Cama no ocupada' unless @camas_estandar[cama_id]
 
-    (fecha_alta.diferencia_dias(fecha_ingreso))
+    (camas_estandar[cama_id][:fecha_alta].diferencia_dias(camas_estandar[cama_id][:fecha_ingreso]))
   end
 
   # Compara dos objetos de tipo ServicioSalud.

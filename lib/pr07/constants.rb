@@ -11,3 +11,7 @@ NIVEL_I = 7  # Nivel I: máxima prioridad, tiempo de respuesta máximo de 7 minu
 NIVEL_II = 30 # Nivel II: alta prioridad, tiempo de respuesta máximo de 30 minutos
 NIVEL_III = 45 # Nivel III: prioridad media, tiempo de respuesta máximo de 45 minutos
 NIVEL_IV = 60 # Nivel IV: prioridad baja, tiempo de respuesta máximo de 60 minutos
+
+ACEPTABLE = 1
+BUENO = 2
+EXCELENTE = 3
