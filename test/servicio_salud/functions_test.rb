@@ -95,5 +95,8 @@ class Functions_test < Test::Unit::TestCase
     assert_equal @servicio2, seleccionar_servicio_con_mejor_indice([@servicio1, @servicio2, @servicio3])
   end
 
+  def test_seleccionar_servicio_con_mejor_indice_uci
+    assert_equal @serviciouci2, seleccionar_servicio_con_mejor_indice_uci([@serviciouci1, @serviciouci2, @serviciouci3])
+  end
 
 end
