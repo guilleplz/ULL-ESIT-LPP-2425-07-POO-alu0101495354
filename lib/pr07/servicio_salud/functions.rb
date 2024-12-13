@@ -112,3 +112,16 @@ def seleccionar_servicio_con_mejor_indice(servicios)
   # Selecciona el servicio con el mayor índice de capacidad de respuesta
   indices.max_by { |servicio, indice| indice }.first
 end
+
+# Permite seleccionar el servicio con mejor índice de capacidad de respuesta.
+#
+# @param servicios [Array<ServicioUrgencias>] Un arreglo de servicios de urgencias.
+# @return [ServicioUrgencias] El servicio con el mejor índice de capacidad de respuesta.
+def seleccionar_servicio_con_mejor_indice_uci(servicios)
+  # Filtra los servicios que tengan camas UCI
+  servicios_con_uci = servicios.select { |servicio| servicio.camas_uci_disponibles.positive? }
+  # Calcula el índice de capacidad de respuesta para cada servicio con camas UCI
+  indices = servicios_con_uci.map { |servicio| [servicio, calcular_indice_respuesta(servicio)] }
+  # Selecciona el servicio con el mayor índice de capacidad de respuesta
+  indices.max_by { |servicio, indice| indice }.first
+end
