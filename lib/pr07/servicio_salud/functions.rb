@@ -107,10 +107,10 @@ end
 # @return [ServicioSalud] El servicio con el mejor índice de capacidad de respuesta.
 def seleccionar_servicio_con_mejor_indice(servicios)
   # Calcula el índice de capacidad de respuesta para cada servicio
-  indices = servicios.map { |servicio| [servicio, calcular_indice_respuesta(servicio)] }
+  servicios.max_by { |servicio| [servicio, calcular_indice_respuesta(servicio)] }
 
   # Selecciona el servicio con el mayor índice de capacidad de respuesta
-  indices.max_by { |servicio, indice| indice }.first
+  #indices.max_by { |servicio, indice| servicio, indice }.first
 end
 
 # Permite seleccionar el servicio con mejor índice de capacidad de respuesta.
@@ -139,6 +139,10 @@ def calcular_porcentaje_camas_libres(servicios)
   end
 end
 
+# Calcula el porcentaje de facultativos de cada especialidad en cada servicio
+#
+# @param servicios [Array<ServicioUrgencias>] Un arreglo de servicios.
+# @return [Float>>] Un array con el porcentaje de cada servicio en orden.
 def calcular_porcentaje_facultativos(servicios)
   servicios.map do |servicio|
     medicos_por_especialidad = servicio.medicos.group_by(&:especialidad)
