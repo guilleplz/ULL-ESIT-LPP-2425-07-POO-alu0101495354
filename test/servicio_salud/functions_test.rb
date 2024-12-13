@@ -99,4 +99,10 @@ class Functions_test < Test::Unit::TestCase
     assert_equal @serviciouci2, seleccionar_servicio_con_mejor_indice_uci([@serviciouci1, @serviciouci2, @serviciouci3])
   end
 
+  def test_calcular_porcentaje_camas_libres
+    assert_equal [90.0, 80.0, 90.0], calcular_porcentaje_camas_libres([@servicio1, @servicio2, @servicio3])
+    assert_equal [90.0, 70.0, 80.0], calcular_porcentaje_camas_libres([@serviciouci1, @serviciouci2, @serviciouci3])
+  end
+
+
 end
