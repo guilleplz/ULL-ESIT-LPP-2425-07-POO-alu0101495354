@@ -125,3 +125,16 @@ def seleccionar_servicio_con_mejor_indice_uci(servicios)
   # Selecciona el servicio con el mayor índice de capacidad de respuesta
   indices.max_by { |servicio, indice| indice }.first
 end
+
+# Calcula el porcentaje de camas libres en cada servicio de urgencias.
+#
+# @param servicios [Array<ServicioUrgencias>] Un arreglo de servicios de urgencias.
+# @return [Float>>] Un array con el porcentaje de camas libres de cada servicio en orden.
+def calcular_porcentaje_camas_libres(servicios)
+  servicios.map do |servicio|
+    camas_ocupadas = servicio.camas_estandar.values.count { |cama| cama[:paciente] }
+    camas_totales = servicio.camas_estandar.size
+    porcentaje_camas_libres = 100 * (camas_totales - camas_ocupadas) / camas_totales.to_f
+    porcentaje_camas_libres
+  end
+end
