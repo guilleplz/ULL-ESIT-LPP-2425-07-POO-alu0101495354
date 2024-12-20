@@ -13,6 +13,7 @@ require_relative "pr07/servicio_salud/servicio_salud"
 require_relative "pr07/servicio_salud/servicio_urgencias"
 require_relative "pr07/servicio_salud/servicio_hospitalizacion"
 require_relative "pr07/servicio_salud/functions"
+require_relative "pr07/dsl"
 
 
 module Pr07
